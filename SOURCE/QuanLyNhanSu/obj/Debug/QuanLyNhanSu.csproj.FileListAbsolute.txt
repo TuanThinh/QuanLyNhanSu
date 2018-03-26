@@ -1,0 +1,60 @@
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe.config
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.pdb
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.Cache
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.pdb
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmMain.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmNhanSu.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csprojResolveAssemblyReference.cache
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmChucVu.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmPhongBan.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmLuong.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTrinhDoHocVan.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmHopDongLaoDong.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmKhenThuongKyLuat.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmSoQDKhenThuongKyLuat.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_PB.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_DSNV.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_CV.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_HD.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_KT_KL.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_TDHV.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmDangNhap.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\Microsoft.SqlServer.Smo.dll
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmNguoiDung.resources
+E:\workspace\C#\WindowsForm\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmDoiMatKhau.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe.config
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.pdb
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.pdb
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\bin\Debug\Microsoft.SqlServer.Smo.dll
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csprojResolveAssemblyReference.cache
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmChucVu.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmDangNhap.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmDoiMatKhau.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmHopDongLaoDong.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmKhenThuongKyLuat.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmLuong.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmMain.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmNguoiDung.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmNhanSu.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmPhongBan.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmSoQDKhenThuongKyLuat.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_DSNV.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_CV.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_HD.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_KT_KL.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_PB.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_TDHV.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTrinhDoHocVan.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
+E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.Cache

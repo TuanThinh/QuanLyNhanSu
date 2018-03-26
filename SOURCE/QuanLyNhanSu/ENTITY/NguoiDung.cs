@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QuanLyNhanSu.ENTITY
+{
+    class NguoiDung
+    {
+        private string taikhoan;
+
+        public string TaiKhoan
+        {
+            get { return taikhoan; }
+            set { taikhoan = value; }
+        }
+        private string matkhau;
+
+        public string MatKhau
+        {
+            get { return matkhau; }
+            set { matkhau = value; }
+        }
+        private bool them;
+
+        public bool Them
+        {
+            get { return them; }
+            set { them = value; }
+        }
+        private bool sua;
+
+        public bool Sua
+        {
+            get { return sua; }
+            set { sua = value; }
+        }
+        private bool xoa;
+
+        public bool Xoa
+        {
+            get { return xoa; }
+            set { xoa = value; }
+        }
+        private bool ad;
+
+        public bool Ad
+        {
+            get { return ad; }
+            set { ad = value; }
+        }
+    }
+}
