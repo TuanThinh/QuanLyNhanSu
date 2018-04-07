@@ -47,6 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\Connector.cs" />
+    <Compile Include="DAL\EditData\EditThongTinChucVu.cs" />
+    <Compile Include="DAL\EditData\EditThongTinHopDongLaoDong.cs" />
+    <Compile Include="DAL\EditData\EditThongTinKhenThuongKyLuat.cs" />
+    <Compile Include="DAL\EditData\EditThongTinLuong.cs" />
+    <Compile Include="DAL\EditData\EditThongTinNhanVien.cs" />
+    <Compile Include="DAL\EditData\EditThongTinPhongBan.cs" />
+    <Compile Include="DAL\EditData\EditThongTinSoQDKhenThuongKyLuat.cs" />
+    <Compile Include="DAL\EditData\EditTrinhDoHocVan.cs" />
     <Compile Include="DAL\NguoiDung_Model.cs" />
     <Compile Include="ENTITY\ChucVu.cs" />
     <Compile Include="ENTITY\HopDongLaoDong.cs" />
