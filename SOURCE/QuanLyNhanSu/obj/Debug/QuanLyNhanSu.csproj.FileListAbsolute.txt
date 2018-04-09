@@ -58,3 +58,27 @@ E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\
 E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTrinhDoHocVan.resources
 E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
 E:\MTA\3_st\K2\Thực tập nhóm_TH14\Quan_Ly_Nhan_Su\QLNS\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.Cache
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csprojResolveAssemblyReference.cache
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmChucVu.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmDangNhap.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmDoiMatKhau.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmHopDongLaoDong.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmKhenThuongKyLuat.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmLuong.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmMain.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmNguoiDung.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmNhanSu.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmPhongBan.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmSoQDKhenThuongKyLuat.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_DSNV.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_CV.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_HD.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_KT_KL.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_PB.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_TDHV.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTrinhDoHocVan.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.cache
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.CoreCompileInputs.cache
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe
+C:\Users\Hiep\Desktop\Cac\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.pdb
