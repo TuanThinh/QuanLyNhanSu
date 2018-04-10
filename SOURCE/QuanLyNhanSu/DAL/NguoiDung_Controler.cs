@@ -10,7 +10,7 @@ using QuanLyNhanSu.ENTITY;
 
 namespace QuanLyNhanSu.DAL
 {
-    class NguoiDung_Model : Connector
+    class NguoiDung_Controler : Connector
     {
         public static string taikhoan;
         public static string matkhau;
@@ -20,12 +20,10 @@ namespace QuanLyNhanSu.DAL
             try
             {
                 string query = "select * from NGUOIDUNG where TaiKhoan = '" + name.Trim() + "' and MatKhau = '" + pass.Trim() + "'";
-                Connector conn = new Connector();
-                conn.openConnection();
-                SqlDataReader dr = conn.execCommand(query);
+                SqlDataReader dr = execCommand(query);
                 if (dr.HasRows == true)
                     return 1;
-                conn.closeConnection();
+                closeConnection();
             }
             catch (Exception ex)
             {
@@ -43,9 +41,7 @@ namespace QuanLyNhanSu.DAL
             try
             {
                 string sql = "select * from NGUOIDUNG where TaiKhoan = '" + taikhoan + "' and MatKhau = '" + matkhau + "'";
-                DAL.Connector conn = new DAL.Connector();
-                conn.openConnection();
-                SqlDataReader dr = conn.execCommand(sql);
+                SqlDataReader dr = execCommand(sql);
                 while (dr.Read())
                 {
                     if (dr["Them"].ToString().Equals("True"))
@@ -61,7 +57,7 @@ namespace QuanLyNhanSu.DAL
                         btnXoa.Visible = true;
                     }
                 }
-                conn.closeConnection();
+                closeConnection();
             }
             catch (Exception ex)
             {
@@ -74,10 +70,9 @@ namespace QuanLyNhanSu.DAL
         {
             try
             {
-                openConnection();
-                SqlCommand cmd = new SqlCommand("insertNGUOIDUNG", Conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@TaiKhoan", nd.TaiKhoan);
+                string query = "insert into NGUOIDUNG(MaNV, MatKhau, Them, Sua, Xoa, CreateLogin) values (@MaNV, @MatKhau, @Them, @Sua, @Xoa, @Ad)";
+                SqlCommand cmd = new SqlCommand(query, Conn);
+                cmd.Parameters.AddWithValue("@MaNV", nd.MaNV);
                 cmd.Parameters.AddWithValue("@MatKhau", nd.MatKhau);
                 cmd.Parameters.AddWithValue("@Them", nd.Them);
                 cmd.Parameters.AddWithValue("@Sua", nd.Sua);
@@ -99,10 +94,9 @@ namespace QuanLyNhanSu.DAL
         {
             try
             {
-                openConnection();
-                SqlCommand cmd = new SqlCommand("editNGUOIDUNG", Conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@TaiKhoan", nd.TaiKhoan);
+                string query = "update NGUOIDUNG set MatKhau = @MatKhau, @Them = @Them, Sua = @Sua, Xoa = @Xoa, CreateLogin = @Ad where MaNV = @MaNV";
+                SqlCommand cmd = new SqlCommand(query, Conn);
+                cmd.Parameters.AddWithValue("@MaNV", nd.MaNV);
                 cmd.Parameters.AddWithValue("@MatKhau", nd.MatKhau);
                 cmd.Parameters.AddWithValue("@Them", nd.Them);
                 cmd.Parameters.AddWithValue("@Sua", nd.Sua);
@@ -124,10 +118,9 @@ namespace QuanLyNhanSu.DAL
         {
             try
             {
-                openConnection();
+                string query = "delete from NGUOIDUNG where MaNV = @MaNV";
                 SqlCommand cmd = new SqlCommand("deleteNGUOIDUNG", Conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@TaiKhoan", nd.TaiKhoan);
+                cmd.Parameters.AddWithValue("@MaNV", nd.MaNV);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e)

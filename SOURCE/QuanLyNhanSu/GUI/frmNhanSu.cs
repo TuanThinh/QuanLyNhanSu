@@ -12,6 +12,7 @@ namespace QuanLyNhanSu.GUI
 {
     public partial class frmNhanSu : Form
     {
+        bool kt;
         public frmNhanSu()
         {
             InitializeComponent();
@@ -67,18 +68,29 @@ namespace QuanLyNhanSu.GUI
         private void frmNhanSu_Load(object sender, EventArgs e)
         {
             lockControl();
-            DAL.NguoiDung_Model nd = new DAL.NguoiDung_Model();
+            DAL.NguoiDung_Controler nd = new DAL.NguoiDung_Controler();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (kt == false)
+            {
+                string query = "delete from NHANVIEN where MaNV = '" + txtMaNV.Text.Trim() + "'";
+                DAL.Connector conn = new DAL.Connector();
+                conn.execNonQuery(query);
+            }
             lockControl();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
             lockControl();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            kt = false;
         }
     }
 }

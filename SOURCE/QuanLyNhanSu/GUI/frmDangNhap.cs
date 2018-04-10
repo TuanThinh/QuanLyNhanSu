@@ -59,12 +59,12 @@ namespace QuanLyNhanSu.GUI
         
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            DAL.NguoiDung_Model nd = new DAL.NguoiDung_Model();
+            DAL.NguoiDung_Controler nd = new DAL.NguoiDung_Controler();
             int check = nd.checkLogin(txtTaiKhoan.Text, txtMatKhau.Text);
             if (check == 1)
             {
-                DAL.NguoiDung_Model.taikhoan = txtTaiKhoan.Text;
-                DAL.NguoiDung_Model.matkhau = txtMatKhau.Text;
+                DAL.NguoiDung_Controler.taikhoan = txtTaiKhoan.Text;
+                DAL.NguoiDung_Controler.matkhau = txtMatKhau.Text;
                 this.Hide();
                 GUI.frmMain main = new frmMain();
                 main.Show();

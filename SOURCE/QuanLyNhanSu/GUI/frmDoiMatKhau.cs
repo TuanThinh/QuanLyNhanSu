@@ -20,16 +20,16 @@ namespace QuanLyNhanSu.GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtMKCu.Text.Trim().Equals(DAL.NguoiDung_Model.matkhau))
+            if (txtMKCu.Text.Trim().Equals(DAL.NguoiDung_Controler.matkhau))
             {
                 if (txtMKMoi.Text.Trim().Equals(txtXacNhan.Text.Trim()))
                 {
-                    string query = "update NGUOIDUNG set MatKhau = '" + txtMKMoi.Text.Trim() + "' where TaiKhoan = '" + DAL.NguoiDung_Model.taikhoan + "'";
+                    string query = "update NGUOIDUNG set MatKhau = '" + txtMKMoi.Text.Trim() + "' where TaiKhoan = '" + DAL.NguoiDung_Controler.taikhoan + "'";
                     DAL.Connector conn = new DAL.Connector();
                     conn.openConnection();
                     SqlCommand cmd = new SqlCommand(query, conn.Conn);
                     cmd.ExecuteNonQuery();
-                    DAL.NguoiDung_Model.matkhau = txtMKMoi.Text.Trim();
+                    DAL.NguoiDung_Controler.matkhau = txtMKMoi.Text.Trim();
                     this.Close();
                 }
                 else

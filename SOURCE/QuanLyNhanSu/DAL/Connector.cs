@@ -46,6 +46,7 @@ namespace QuanLyNhanSu.DAL
             SqlDataReader dr = null;
             try
             {
+                openConnection();
                 cmd = new SqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 dr = cmd.ExecuteReader();
@@ -56,6 +57,19 @@ namespace QuanLyNhanSu.DAL
             }
             return dr;
         }
-       
+        public void execNonQuery(string sql)
+        {
+            try
+            {
+                openConnection();
+                cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
     }
 }

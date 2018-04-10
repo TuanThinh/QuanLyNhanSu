@@ -125,7 +125,7 @@ namespace QuanLyNhanSu.GUI
         {
             try
             {
-                string query = "select * from NGUOIDUNG where TaiKhoan = '" + DAL.NguoiDung_Model.taikhoan + "' and MatKhau = '" + DAL.NguoiDung_Model.matkhau + "'";
+                string query = "select * from NGUOIDUNG where TaiKhoan = '" + DAL.NguoiDung_Controler.taikhoan + "' and MatKhau = '" + DAL.NguoiDung_Controler.matkhau + "'";
                 DAL.Connector conn = new DAL.Connector();
                 conn.openConnection();
                 SqlDataReader dr = conn.execCommand(query);

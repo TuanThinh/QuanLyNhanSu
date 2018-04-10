@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSoQDKhenThuongKyLuat = new System.Windows.Forms.TextBox();
             this.dtThoiGian = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lsvKhenThuongKyLuat = new System.Windows.Forms.ListView();
+            this.colMaNV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colSoQDKhenThuongKyLuat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colThoiGian = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.colMaNV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSoQDKhenThuongKyLuat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colThoiGian = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtSoQDKhenThuongKyLuat = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -78,6 +78,14 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // txtSoQDKhenThuongKyLuat
+            // 
+            this.txtSoQDKhenThuongKyLuat.Location = new System.Drawing.Point(189, 55);
+            this.txtSoQDKhenThuongKyLuat.Multiline = true;
+            this.txtSoQDKhenThuongKyLuat.Name = "txtSoQDKhenThuongKyLuat";
+            this.txtSoQDKhenThuongKyLuat.Size = new System.Drawing.Size(219, 26);
+            this.txtSoQDKhenThuongKyLuat.TabIndex = 17;
+            // 
             // dtThoiGian
             // 
             this.dtThoiGian.CustomFormat = "";
@@ -97,34 +105,6 @@
             this.label6.Size = new System.Drawing.Size(64, 16);
             this.label6.TabIndex = 14;
             this.label6.Text = "Thời gian";
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Location = new System.Drawing.Point(189, 23);
-            this.txtMaNV.Multiline = true;
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(219, 26);
-            this.txtMaNV.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Số QĐ khen thưởng - kỷ luật";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã nhân viên";
             // 
             // btnHuy
             // 
@@ -175,6 +155,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -188,6 +169,34 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // txtMaNV
+            // 
+            this.txtMaNV.Location = new System.Drawing.Point(189, 23);
+            this.txtMaNV.Multiline = true;
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(219, 26);
+            this.txtMaNV.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(170, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Số QĐ khen thưởng - kỷ luật";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã nhân viên";
             // 
             // groupBox2
             // 
@@ -224,6 +233,21 @@
             this.lsvKhenThuongKyLuat.TabIndex = 0;
             this.lsvKhenThuongKyLuat.UseCompatibleStateImageBehavior = false;
             this.lsvKhenThuongKyLuat.View = System.Windows.Forms.View.Details;
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.Text = "Mã nhân viên";
+            this.colMaNV.Width = 133;
+            // 
+            // colSoQDKhenThuongKyLuat
+            // 
+            this.colSoQDKhenThuongKyLuat.Text = "Số QĐ khen thưởng - kỷ luật";
+            this.colSoQDKhenThuongKyLuat.Width = 192;
+            // 
+            // colThoiGian
+            // 
+            this.colThoiGian.Text = "Thời gian";
+            this.colThoiGian.Width = 126;
             // 
             // groupBox3
             // 
@@ -279,29 +303,6 @@
             this.label5.Size = new System.Drawing.Size(60, 16);
             this.label5.TabIndex = 8;
             this.label5.Text = "Tìm theo";
-            // 
-            // colMaNV
-            // 
-            this.colMaNV.Text = "Mã nhân viên";
-            this.colMaNV.Width = 133;
-            // 
-            // colSoQDKhenThuongKyLuat
-            // 
-            this.colSoQDKhenThuongKyLuat.Text = "Số QĐ khen thưởng - kỷ luật";
-            this.colSoQDKhenThuongKyLuat.Width = 192;
-            // 
-            // colThoiGian
-            // 
-            this.colThoiGian.Text = "Thời gian";
-            this.colThoiGian.Width = 126;
-            // 
-            // txtSoQDKhenThuongKyLuat
-            // 
-            this.txtSoQDKhenThuongKyLuat.Location = new System.Drawing.Point(189, 55);
-            this.txtSoQDKhenThuongKyLuat.Multiline = true;
-            this.txtSoQDKhenThuongKyLuat.Name = "txtSoQDKhenThuongKyLuat";
-            this.txtSoQDKhenThuongKyLuat.Size = new System.Drawing.Size(219, 26);
-            this.txtSoQDKhenThuongKyLuat.TabIndex = 17;
             // 
             // frmKhenThuongKyLuat
             // 

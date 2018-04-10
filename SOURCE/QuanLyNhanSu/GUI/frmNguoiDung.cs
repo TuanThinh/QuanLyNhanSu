@@ -64,7 +64,7 @@ namespace QuanLyNhanSu.GUI
 
         private void frmNguoiDung_Load(object sender, EventArgs e)
         {
-            DAL.NguoiDung_Model nd = new DAL.NguoiDung_Model();
+            DAL.NguoiDung_Controler nd = new DAL.NguoiDung_Controler();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
             showList();
             lockControl();
@@ -85,7 +85,7 @@ namespace QuanLyNhanSu.GUI
         {
             clearList();
             ENTITY.NguoiDung nd = new ENTITY.NguoiDung();
-            nd.TaiKhoan = txtTaiKhoan.Text.Trim();
+            nd.MaNV = txtTaiKhoan.Text.Trim();
             nd.MatKhau = txtMatKhau.Text.Trim();
             nd.Them = ckbThem.Checked ? true : false;
             nd.Sua = ckbSua.Checked ? true : false;
@@ -93,13 +93,13 @@ namespace QuanLyNhanSu.GUI
             nd.Ad = ckbAd.Checked ? true : false;
             if (kt == true)
             {
-                DAL.NguoiDung_Model user = new DAL.NguoiDung_Model();
+                DAL.NguoiDung_Controler user = new DAL.NguoiDung_Controler();
                 user.insertNGUOIDUNG(nd);
                 showList();
             }
             else
             {
-                DAL.NguoiDung_Model user = new DAL.NguoiDung_Model();
+                DAL.NguoiDung_Controler user = new DAL.NguoiDung_Controler();
                 user.updateNGUOIDUNG(nd);
                 showList();
             }
@@ -173,12 +173,12 @@ namespace QuanLyNhanSu.GUI
         private void btnXoa_Click(object sender, EventArgs e)
         {
             ENTITY.NguoiDung nd = new ENTITY.NguoiDung();
-            nd.TaiKhoan = txtTaiKhoan.Text.Trim();
+            nd.MaNV = txtTaiKhoan.Text.Trim();
             DialogResult check =  MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (check == DialogResult.Yes)
             {
                 clearList();
-                DAL.NguoiDung_Model user = new DAL.NguoiDung_Model();
+                DAL.NguoiDung_Controler user = new DAL.NguoiDung_Controler();
                 user.deleteNGUOIDUNG(nd);
                 showList();
             }

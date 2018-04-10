@@ -12,6 +12,7 @@ namespace QuanLyNhanSu.GUI
 {
     public partial class frmHopDongLaoDong : Form
     {
+        bool kt;
         public frmHopDongLaoDong()
         {
             InitializeComponent();
@@ -43,13 +44,19 @@ namespace QuanLyNhanSu.GUI
 
         private void frmHopDongLaoDong_Load(object sender, EventArgs e)
         {
-            DAL.NguoiDung_Model nd = new DAL.NguoiDung_Model();
+            DAL.NguoiDung_Controler nd = new DAL.NguoiDung_Controler();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
             lockControl();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (kt==false)
+            {
+                string query = "delete from HOPDONGLAODONG where MaHD = '" + txtMaHopDong.Text.Trim() + "'";
+                DAL.Connector conn = new DAL.Connector();
+                conn.execNonQuery(query);
+            }
             lockControl();
         }
 
@@ -62,6 +69,11 @@ namespace QuanLyNhanSu.GUI
         {
             openControl();
             txtMaHopDong.Focus();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            kt = false;
         }
     }
 }

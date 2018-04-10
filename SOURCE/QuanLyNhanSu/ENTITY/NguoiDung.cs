@@ -8,12 +8,12 @@ namespace QuanLyNhanSu.ENTITY
 {
     class NguoiDung
     {
-        private string taikhoan;
+        private string manv;
 
-        public string TaiKhoan
+        public string MaNV
         {
-            get { return taikhoan; }
-            set { taikhoan = value; }
+            get { return manv; }
+            set { manv = value; }
         }
         private string matkhau;
 

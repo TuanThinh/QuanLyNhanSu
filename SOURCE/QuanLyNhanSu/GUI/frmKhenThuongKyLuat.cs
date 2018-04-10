@@ -12,6 +12,7 @@ namespace QuanLyNhanSu.GUI
 {
     public partial class frmKhenThuongKyLuat : Form
     {
+        bool kt;
         public frmKhenThuongKyLuat()
         {
             InitializeComponent();
@@ -40,12 +41,18 @@ namespace QuanLyNhanSu.GUI
         private void frmKhenThuongKyLuat_Load(object sender, EventArgs e)
         {
             lockControl();
-            DAL.NguoiDung_Model nd = new DAL.NguoiDung_Model();
+            DAL.NguoiDung_Controler nd = new DAL.NguoiDung_Controler();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (kt == false)
+            {
+                string query = "delete from KHENTHUONG_KYLUAT where MaNV = '" + txtMaNV.Text.Trim() + "'and SoQD = '" + txtSoQDKhenThuongKyLuat.Text.Trim() + "'";
+                DAL.Connector conn = new DAL.Connector();
+                conn.execNonQuery(query);
+            }
             lockControl();
         }
 
@@ -58,6 +65,11 @@ namespace QuanLyNhanSu.GUI
         {
             openControl();
             txtMaNV.Focus();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            kt = false;
         }
 
 

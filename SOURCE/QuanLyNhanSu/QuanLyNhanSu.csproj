@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\ChucVu_Controler.cs" />
     <Compile Include="DAL\Connector.cs" />
     <Compile Include="DAL\EditData\EditThongTinChucVu.cs" />
     <Compile Include="DAL\EditData\EditThongTinHopDongLaoDong.cs" />
@@ -55,7 +56,8 @@
     <Compile Include="DAL\EditData\EditThongTinPhongBan.cs" />
     <Compile Include="DAL\EditData\EditThongTinSoQDKhenThuongKyLuat.cs" />
     <Compile Include="DAL\EditData\EditTrinhDoHocVan.cs" />
-    <Compile Include="DAL\NguoiDung_Model.cs" />
+    <Compile Include="DAL\HopDongLaoDong.cs" />
+    <Compile Include="DAL\NguoiDung_Controler.cs" />
     <Compile Include="ENTITY\ChucVu.cs" />
     <Compile Include="ENTITY\HopDongLaoDong.cs" />
     <Compile Include="ENTITY\KhenThuongKyLuat.cs" />
@@ -258,7 +260,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\if_kservices_15660.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Symbol-Add.ico" />
   </ItemGroup>
@@ -294,6 +298,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_preferences-desktop-cryptography_8794.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_view_text_1872.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d bar chart.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Help_Circle_Blue_34225.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phan-mem-nhan-su.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tinh-hinh-cua-moi-truong-kinh-doanh-viet-nam-hien-nay.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
