@@ -131,7 +131,6 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -306,6 +305,7 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 
@@ -319,10 +319,10 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Mã phòng ban",
-            "Tên phòng ban",
-            "Địa chỉ",
-            "Số điện thoại"});
+            "Bậc lương",
+            "Lương cơ bản",
+            "Hệ số lương",
+            "Hệ số phụ cấp"});
             this.comboBox1.Location = new System.Drawing.Point(74, 16);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);

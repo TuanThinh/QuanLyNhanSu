@@ -75,9 +75,10 @@
             this.colMaTDHV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colBacLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbValue = new System.Windows.Forms.TextBox();
+            this.cmbKey = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -442,6 +443,8 @@
             this.lsvNhanVien.TabIndex = 0;
             this.lsvNhanVien.UseCompatibleStateImageBehavior = false;
             this.lsvNhanVien.View = System.Windows.Forms.View.Details;
+            this.lsvNhanVien.SelectedIndexChanged += new System.EventHandler(this.lsvNhanVien_SelectedIndexChanged);
+            this.lsvNhanVien.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsvNhanVien_MouseClick);
             // 
             // colMaNV
             // 
@@ -516,9 +519,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.btnTimKiem);
-            this.groupBox3.Controls.Add(this.txtTimKiem);
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.cmbValue);
+            this.groupBox3.Controls.Add(this.cmbKey);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(3, 16);
@@ -526,6 +530,16 @@
             this.groupBox3.Size = new System.Drawing.Size(978, 22);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(857, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(53, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnTimKiem
             // 
@@ -538,31 +552,33 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // txtTimKiem
+            // cmbValue
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(547, 1);
-            this.txtTimKiem.Multiline = true;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(237, 21);
-            this.txtTimKiem.TabIndex = 2;
+            this.cmbValue.Location = new System.Drawing.Point(547, 1);
+            this.cmbValue.Multiline = true;
+            this.cmbValue.Name = "cmbValue";
+            this.cmbValue.Size = new System.Drawing.Size(237, 21);
+            this.cmbValue.TabIndex = 2;
+            this.cmbValue.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
-            // comboBox1
+            // cmbKey
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbKey.FormattingEnabled = true;
+            this.cmbKey.Items.AddRange(new object[] {
             "Mã nhân viên",
             "Họ tên",
             "Giới tính",
-            "Ngày sinh",
             "Địa chỉ",
             "Dân tộc",
             "Quốc tịch",
             "Số điên thoại"});
-            this.comboBox1.Location = new System.Drawing.Point(426, 1);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cmbKey.Location = new System.Drawing.Point(426, 1);
+            this.cmbKey.Name = "cmbKey";
+            this.cmbKey.Size = new System.Drawing.Size(121, 21);
+            this.cmbKey.TabIndex = 1;
+            this.cmbKey.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -644,8 +660,9 @@
         private System.Windows.Forms.ColumnHeader colBacLuong;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox cmbValue;
+        private System.Windows.Forms.ComboBox cmbKey;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

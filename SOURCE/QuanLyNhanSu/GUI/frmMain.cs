@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -99,57 +98,6 @@ namespace QuanLyNhanSu.GUI
         private void danhSáchNhânViênToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             GUI.frmTK_DSNV frm = new frmTK_DSNV();
-            frm.ShowDialog();
-        }
-
-        private void mnuHT_QLNguoiDung_Click(object sender, EventArgs e)
-        {
-            GUI.frmNguoiDung frm = new frmNguoiDung();
-            frm.ShowDialog();
-        }
-
-        private void mnuHT_DangXuat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            GUI.frmDangNhap frm = new frmDangNhap();
-            frm.Show();
-        }
-
-        private void mnuHT_Thoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Application.Exit();
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                string query = "select * from NGUOIDUNG where TaiKhoan = '" + DAL.NguoiDung_Controler.taikhoan + "' and MatKhau = '" + DAL.NguoiDung_Controler.matkhau + "'";
-                DAL.Connector conn = new DAL.Connector();
-                conn.openConnection();
-                SqlDataReader dr = conn.execCommand(query);
-                while (dr.Read())
-                {
-                    if (dr["Ad"].ToString().Equals("True"))
-                    {
-                        mnuHT_QLNguoiDung.Enabled = true;
-                    }
-                    else
-                    {
-                        mnuHT_QLNguoiDung.Enabled = false;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                new Exception("Error: " + ex.Message);
-            }
-        }
-
-        private void mnuHT_DoiMatKhau_Click(object sender, EventArgs e)
-        {
-            GUI.frmDoiMatKhau frm = new frmDoiMatKhau();
             frm.ShowDialog();
         }
     }

@@ -6,13 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; using QuanLyNhanSu.DATA.AddData; using QuanLyNhanSu.DATA.EditData; using QuanLyNhanSu.ENTITY;
+using System.Data.SqlClient;
 
 namespace QuanLyNhanSu.GUI
 {
     public partial class frmSoQDKhenThuongKyLuat : Form
     {
-        bool kt;
+        AddSoQDKTKL addSoQDKTKL = new AddSoQDKTKL();
+
         public frmSoQDKhenThuongKyLuat()
         {
             InitializeComponent();
@@ -40,19 +42,21 @@ namespace QuanLyNhanSu.GUI
 
         private void frmSoQDKhenThuongKyLuat_Load(object sender, EventArgs e)
         {
-            lockControl();
-            DAL.NguoiDung_Controler nd = new DAL.NguoiDung_Controler();
-            nd.checkPermissions(btnThem, btnSua, btnXoa);
+            lsvSoQDKhenThuongKyLuat.Items.Clear();
+            try             {                 SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NE70A7B\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");                 SqlCommand com = new SqlCommand("Select *from SOQUYETDINHKHENTHUONG_KYLUAT", conn);                 conn.Open();                 SqlDataReader dr = com.ExecuteReader();                 while (dr.Read())                 {                     addList(dr);                 }             }             catch (Exception ex)             {                  throw;             }
+        }
+
+        private void addList(SqlDataReader dr)
+        {
+            ListViewItem item = new ListViewItem();
+            item.Text = dr["SoQD"].ToString();
+            item.SubItems.Add(dr["LyDo"].ToString());
+            item.SubItems.Add(dr["HinhThuc"].ToString());
+            lsvSoQDKhenThuongKyLuat.Items.Add(item);
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (kt == false)
-            {
-                string query = "delete from SOQDKKHENTHUONG_KYLUAT where SoQD = '" + txtSoQDKhenThuongKyLuat.Text.Trim() + "'";
-                DAL.Connector conn = new DAL.Connector();
-                conn.execNonQuery(query);
-            }
             lockControl();
         }
 
@@ -65,11 +69,49 @@ namespace QuanLyNhanSu.GUI
         {
             openControl();
             txtSoQDKhenThuongKyLuat.Focus();
+            SoQDKhenThuongKyLuat soQDKTKL = new SoQDKhenThuongKyLuat(txtSoQDKhenThuongKyLuat.Text, txtSoQDKhenThuongKyLuat.Text, txtHinhThuc.Text);             if (txtSoQDKhenThuongKyLuat.Text == null )             {                 MessageBox.Show("Bạn chưa điền đủ thông tin!");             }             else             {                 try                 {                     addSoQDKTKL.AddProc(soQDKTKL);                     MessageBox.Show("Lưu Thông tin Thành công!");                 }                 catch (Exception a)                 {                     new Exception("Error: " + a.Message);                     MessageBox.Show("Thêm thông tin không thành công!", "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);                 }             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            kt = false;
+            lsvSoQDKhenThuongKyLuat.Items.Clear();
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NE70A7B\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
+            conn.Open();
+            SqlDataReader dr = null;
+            SqlCommand cmd = null;
+            string key = comboBox1.Text.Trim();
+            string value = txtTimKiem.Text.Trim();
+            string query;
+            if (key.Equals("Số QĐ khen thưởng - kỷ luật"))
+            {
+                query = "select * from SOQUYETDINHKHENTHUONG_KYLUAT where SoQD like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+            else if (key.Equals("Lý do"))
+            {
+                query = "select * from SOQUYETDINHKHENTHUONG_KYLUAT where LyDo like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+            else
+            {
+                query = "select * from SOQUYETDINHKHENTHUONG_KYLUAT where HinhThuc like '" + value + "%'";
+                cmd = new SqlCommand(query, conn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
         }
     }
 }

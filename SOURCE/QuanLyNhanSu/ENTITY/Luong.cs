@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhanSu.ENTITY
 {
-    class Luong
+    public class Luong
     {
+        public float BacLuong { get; set; }
+        public float LuongCoBan { get; set; }
+        public float HeSoLuong { get; set; }
+        public float HeSoPhuCap { get; set; }
+
+        public Luong(float bacLuong, float luongCoBan, float heSoLuong, float heSoPhuCap)
+        {
+            BacLuong = bacLuong;
+            LuongCoBan = luongCoBan;
+            HeSoLuong = heSoLuong;
+            HeSoPhuCap = heSoPhuCap;
+        }
     }
 }

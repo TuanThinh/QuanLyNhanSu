@@ -19,7 +19,7 @@ namespace QuanLyNhanSu.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -73,16 +73,6 @@ namespace QuanLyNhanSu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3d_bar_chart {
-            get {
-                object obj = ResourceManager.GetObject("3d bar chart", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Config_Tools {
             get {
                 object obj = ResourceManager.GetObject("Config-Tools", resourceCulture);
@@ -93,79 +83,9 @@ namespace QuanLyNhanSu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap if_Help_Circle_Blue_34225 {
-            get {
-                object obj = ResourceManager.GetObject("if_Help_Circle_Blue_34225", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap if_kservices_15660 {
-            get {
-                object obj = ResourceManager.GetObject("if_kservices_15660", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap if_Login_73221 {
-            get {
-                object obj = ResourceManager.GetObject("if_Login_73221", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap if_Login_Manager_7261 {
-            get {
-                object obj = ResourceManager.GetObject("if_Login Manager_7261", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap if_preferences_desktop_cryptography_8794 {
-            get {
-                object obj = ResourceManager.GetObject("if_preferences-desktop-cryptography_8794", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap if_printer_16414 {
             get {
                 object obj = ResourceManager.GetObject("if_printer_16414", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap if_view_text_1872 {
-            get {
-                object obj = ResourceManager.GetObject("if_view_text_1872", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Phan_mem_nhan_su {
-            get {
-                object obj = ResourceManager.GetObject("Phan-mem-nhan-su", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,16 +146,6 @@ namespace QuanLyNhanSu.Properties {
         internal static System.Drawing.Bitmap Symbol_Stop {
             get {
                 object obj = ResourceManager.GetObject("Symbol-Stop", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tinh_hinh_cua_moi_truong_kinh_doanh_viet_nam_hien_nay {
-            get {
-                object obj = ResourceManager.GetObject("tinh-hinh-cua-moi-truong-kinh-doanh-viet-nam-hien-nay", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

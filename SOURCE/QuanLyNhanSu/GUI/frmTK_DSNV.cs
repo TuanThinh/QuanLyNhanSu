@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QuanLyNhanSu.DATA;
 
 namespace QuanLyNhanSu.GUI
 {
@@ -17,66 +18,36 @@ namespace QuanLyNhanSu.GUI
         {
             InitializeComponent();
         }
-        public SqlConnection cn = new SqlConnection();
-        public void Ketnoi()
+        private void frmTK_DSNV_Load(object sender, EventArgs e)
         {
             try
             {
-                if (cn.State == 0)
+                SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NE70A7B\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
+                SqlCommand com = new SqlCommand("Select * from NHANVIEN");
+                conn.Open();
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
                 {
-                //    cn.ConnectionString = @"Data Source=HIEP\SQLEXPRESS;Initial Catalog=NHANVIEN;Integrated Security=True";
-                    cn.Open();
+                    ListViewItem item = new ListViewItem();
+                    item.Text = dr["MaNV"].ToString();
+                    item.SubItems.Add(dr["HoTen"].ToString());
+                    item.SubItems.Add(dr["GioiTinh"].ToString());
+                    item.SubItems.Add(dr["NgaySinh"].ToString());
+                    item.SubItems.Add(dr["DiaChi"].ToString());
+                    item.SubItems.Add(dr["DanToc"].ToString());
+                    item.SubItems.Add(dr["QuocTich"].ToString());
+                    item.SubItems.Add(dr["SDT"].ToString());
+                    item.SubItems.Add(dr["MaPB"].ToString());
+                    item.SubItems.Add(dr["MaCV"].ToString());
+                    item.SubItems.Add(dr["MaTDVH"].ToString());
+                    item.SubItems.Add(dr["BacLuong"].ToString());
+                    lsvNhanVien.Items.Add(item);
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
-        }
-        public void Ngatketnoi()
-        {
-            if (cn.State != 0)
-            {
-                cn.Close();
-            }
-        }
-
-        //Phương thức truy vấn để xem dữ liệu
-        public DataTable HienDL(string sql)
-        {
-            Ketnoi();
-
-            SqlDataAdapter adap = new SqlDataAdapter(sql, cn);
-            DataTable dt = new DataTable();
-            adap.Fill(dt);
-
-            return dt;
-
-            Ngatketnoi();
-        }
-
-        //Phương thức truy vấn dữ liệu: Insert, Update, Delete
-        public SqlCommand ThucThiDl(string sql)
-        {
-            Ketnoi();
-
-            SqlCommand cm = new SqlCommand(sql, cn);
-            cm.ExecuteNonQuery();
-
-            return cm;
-
-            Ngatketnoi();
-        }
-
-    private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.DataSource = HienDL("select * from NHANVIEN");
         }
     }
 }

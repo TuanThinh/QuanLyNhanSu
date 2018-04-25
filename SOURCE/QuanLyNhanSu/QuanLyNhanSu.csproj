@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLyNhanSu</RootNamespace>
     <AssemblyName>QuanLyNhanSu</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -33,7 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SqlServer.Smo, Version=13.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,23 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\ChucVu_Controler.cs" />
-    <Compile Include="DAL\Connector.cs" />
-    <Compile Include="DAL\EditData\EditThongTinChucVu.cs" />
-    <Compile Include="DAL\EditData\EditThongTinHopDongLaoDong.cs" />
-    <Compile Include="DAL\EditData\EditThongTinKhenThuongKyLuat.cs" />
-    <Compile Include="DAL\EditData\EditThongTinLuong.cs" />
-    <Compile Include="DAL\EditData\EditThongTinNhanVien.cs" />
-    <Compile Include="DAL\EditData\EditThongTinPhongBan.cs" />
-    <Compile Include="DAL\EditData\EditThongTinSoQDKhenThuongKyLuat.cs" />
-    <Compile Include="DAL\EditData\EditTrinhDoHocVan.cs" />
-    <Compile Include="DAL\HopDongLaoDong.cs" />
-    <Compile Include="DAL\NguoiDung_Controler.cs" />
+    <Compile Include="DATA\AddData\AddChucvu.cs" />
+    <Compile Include="DATA\AddData\AddHopDongLaoDong.cs" />
+    <Compile Include="DATA\AddData\AddKhenThuong_KyLuat.cs" />
+    <Compile Include="DATA\AddData\AddLuong.cs" />
+    <Compile Include="DATA\AddData\AddNhanVien.cs" />
+    <Compile Include="DATA\AddData\AddPhongBan.cs" />
+    <Compile Include="DATA\AddData\AddSoQDKTKL.cs" />
+    <Compile Include="DATA\AddData\AddTrinhDoHocVan.cs" />
+    <Compile Include="DATA\DBUtils.cs" />
+    <Compile Include="DATA\EditData\EditThongTinChucVu.cs" />
+    <Compile Include="DATA\EditData\EditThongTinHopDongLaoDong.cs" />
+    <Compile Include="DATA\EditData\EditThongTinKhenThuongKyLuat.cs" />
+    <Compile Include="DATA\EditData\EditThongTinLuong.cs" />
+    <Compile Include="DATA\EditData\EditThongTinNhanVien.cs" />
+    <Compile Include="DATA\EditData\EditThongTinPhongBan.cs" />
     <Compile Include="ENTITY\ChucVu.cs" />
     <Compile Include="ENTITY\HopDongLaoDong.cs" />
     <Compile Include="ENTITY\KhenThuongKyLuat.cs" />
     <Compile Include="ENTITY\Luong.cs" />
-    <Compile Include="ENTITY\NguoiDung.cs" />
     <Compile Include="ENTITY\NhanVien.cs" />
     <Compile Include="ENTITY\PhongBan.cs" />
     <Compile Include="ENTITY\SoQDKhenThuongKyLuat.cs" />
@@ -78,18 +79,6 @@
     </Compile>
     <Compile Include="GUI\frmChucVu.Designer.cs">
       <DependentUpon>frmChucVu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\frmDangNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\frmDangNhap.Designer.cs">
-      <DependentUpon>frmDangNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\frmDoiMatKhau.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\frmDoiMatKhau.Designer.cs">
-      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmHopDongLaoDong.cs">
       <SubType>Form</SubType>
@@ -114,12 +103,6 @@
     </Compile>
     <Compile Include="GUI\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\frmNguoiDung.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\frmNguoiDung.Designer.cs">
-      <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmNhanSu.cs">
       <SubType>Form</SubType>
@@ -186,12 +169,6 @@
     <EmbeddedResource Include="GUI\frmChucVu.resx">
       <DependentUpon>frmChucVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmDangNhap.resx">
-      <DependentUpon>frmDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmDoiMatKhau.resx">
-      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmHopDongLaoDong.resx">
       <DependentUpon>frmHopDongLaoDong.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,9 +180,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmNguoiDung.resx">
-      <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhanSu.resx">
       <DependentUpon>frmNhanSu.cs</DependentUpon>
@@ -261,7 +235,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\if_kservices_15660.png" />
+    <Folder Include="DAL\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Symbol-Add.ico" />
@@ -291,28 +265,7 @@
     <None Include="Resources\Symbol-Check.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\if_Login_73221.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\if_Login Manager_7261.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\if_preferences-desktop-cryptography_8794.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\if_view_text_1872.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\3d bar chart.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\if_Help_Circle_Blue_34225.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Phan-mem-nhan-su.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tinh-hinh-cua-moi-truong-kinh-doanh-viet-nam-hien-nay.jpg" />
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

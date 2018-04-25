@@ -8,5 +8,6 @@ namespace QuanLyNhanSu.ENTITY
 {
     class TrinhDoHocVan
     {
+        public string MaTDHV { get; set; }         public string TenTDHV { get; set; }         public string ChuyenNganhHoc { get; set; }                   public TrinhDoHocVan(string maTDHV, string tenTDHV, string chuyennganhhoc)         {             MaTDHV = maTDHV;             TenTDHV = tenTDHV;             ChuyenNganhHoc = chuyennganhhoc;         }
     }
 }

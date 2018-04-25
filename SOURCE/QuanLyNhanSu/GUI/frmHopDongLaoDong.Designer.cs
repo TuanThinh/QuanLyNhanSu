@@ -284,6 +284,7 @@
             this.lsvHopDongLaoDong.TabIndex = 0;
             this.lsvHopDongLaoDong.UseCompatibleStateImageBehavior = false;
             this.lsvHopDongLaoDong.View = System.Windows.Forms.View.Details;
+            this.lsvHopDongLaoDong.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsvHopDongLaoDong_MouseClick);
             // 
             // colMaHopDong
             // 
@@ -334,6 +335,7 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 

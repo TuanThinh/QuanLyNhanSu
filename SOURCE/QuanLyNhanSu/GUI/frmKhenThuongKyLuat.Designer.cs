@@ -233,6 +233,7 @@
             this.lsvKhenThuongKyLuat.TabIndex = 0;
             this.lsvKhenThuongKyLuat.UseCompatibleStateImageBehavior = false;
             this.lsvKhenThuongKyLuat.View = System.Windows.Forms.View.Details;
+            this.lsvKhenThuongKyLuat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsvKhenThuongKyLuat_MouseClick);
             // 
             // colMaNV
             // 
@@ -273,6 +274,7 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 

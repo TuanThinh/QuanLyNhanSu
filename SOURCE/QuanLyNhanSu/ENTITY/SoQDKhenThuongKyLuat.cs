@@ -1,12 +1,1 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QuanLyNhanSu.ENTITY
-{
-    class SoQDKhenThuongKyLuat
-    {
-    }
-}
+﻿using System; using System.Collections.Generic; using System.Linq; using System.Text; using System.Threading.Tasks;  namespace QuanLyNhanSu.ENTITY {     class SoQDKhenThuongKyLuat     {         public string SoQD { get; set; }         public string LyDo { get; set; }         public string HinhThuc { get; set; }                   public SoQDKhenThuongKyLuat(string soQD, string lydo, string hinhthuc)         {             SoQD = soQD;             LyDo = lydo;             HinhThuc = hinhthuc;         }     } } 

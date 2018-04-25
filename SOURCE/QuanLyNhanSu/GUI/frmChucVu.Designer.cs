@@ -71,6 +71,7 @@
             this.groupBox1.Size = new System.Drawing.Size(432, 564);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnHuy
             // 
@@ -153,6 +154,7 @@
             this.txtMaCV.Name = "txtMaCV";
             this.txtMaCV.Size = new System.Drawing.Size(292, 27);
             this.txtMaCV.TabIndex = 2;
+            this.txtMaCV.TextChanged += new System.EventHandler(this.txtMaCV_TextChanged);
             // 
             // label2
             // 
@@ -198,16 +200,20 @@
             // 
             // lsvChucVu
             // 
+            this.lsvChucVu.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.lsvChucVu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colMaCV,
             this.colTenCV});
             this.lsvChucVu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvChucVu.ForeColor = System.Drawing.Color.Black;
             this.lsvChucVu.Location = new System.Drawing.Point(3, 16);
             this.lsvChucVu.Name = "lsvChucVu";
             this.lsvChucVu.Size = new System.Drawing.Size(370, 482);
             this.lsvChucVu.TabIndex = 0;
             this.lsvChucVu.UseCompatibleStateImageBehavior = false;
             this.lsvChucVu.View = System.Windows.Forms.View.Details;
+            this.lsvChucVu.SelectedIndexChanged += new System.EventHandler(this.lsvChucVu_SelectedIndexChanged);
+            this.lsvChucVu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsvChucVu_MouseClick);
             // 
             // colMaCV
             // 
@@ -243,6 +249,7 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 
