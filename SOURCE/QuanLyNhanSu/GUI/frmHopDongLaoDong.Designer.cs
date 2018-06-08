@@ -153,6 +153,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -278,6 +279,8 @@
             this.colNgayBatDau,
             this.colNgayKetThuc});
             this.lsvHopDongLaoDong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvHopDongLaoDong.FullRowSelect = true;
+            this.lsvHopDongLaoDong.GridLines = true;
             this.lsvHopDongLaoDong.Location = new System.Drawing.Point(3, 16);
             this.lsvHopDongLaoDong.Name = "lsvHopDongLaoDong";
             this.lsvHopDongLaoDong.Size = new System.Drawing.Size(456, 446);

@@ -15,7 +15,7 @@ namespace QuanLyNhanSu.DATA
             string datasource = @"DEVSERVER-WIN7\SQLEXPRESS";
 
             //
-            string database = "ThucTapNhom_QuanLyNhanSu";
+            string database = "QuanLyNhanSu";
             string username = "sa";
             string password = "1";
 

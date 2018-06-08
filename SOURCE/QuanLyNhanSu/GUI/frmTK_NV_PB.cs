@@ -72,5 +72,12 @@ namespace QuanLyNhanSu.GUI
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.DataSource = HienDL("select A.MaNV as N'Mã NV',A.HoTen as N'Họ và Tên',B.MaPB as N'Mã Nhân Viên',B.TenPB as N'Tên Phòng Ban' from NHANVIEN  A inner join PHONGBAN B on A.MaPB = B.MaPB and A.MaPB Like '%" + txtKeyValue.Text + "%'");
         }
+
+        private void btnXong_Click_1(object sender, EventArgs e)
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DataSource = HienDL("select A.MaNV as N'Mã NV',A.HoTen as N'Họ và Tên',B.MaPB as N'Mã Nhân Viên',B.TenPB as N'Tên Phòng Ban' from NHANVIEN  A inner join PHONGBAN B on A.MaPB = B.MaPB and A.MaPB Like '%" + txtKeyValue.Text + "%'");
+
+        }
     }
 }

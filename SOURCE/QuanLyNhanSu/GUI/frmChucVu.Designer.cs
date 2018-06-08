@@ -41,8 +41,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lsvChucVu = new System.Windows.Forms.ListView();
-            this.colMaCV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTenCV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -110,6 +110,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -200,30 +201,29 @@
             // 
             // lsvChucVu
             // 
-            this.lsvChucVu.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.lsvChucVu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaCV,
-            this.colTenCV});
+            this.columnHeader1,
+            this.columnHeader2});
             this.lsvChucVu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lsvChucVu.ForeColor = System.Drawing.Color.Black;
+            this.lsvChucVu.FullRowSelect = true;
+            this.lsvChucVu.GridLines = true;
             this.lsvChucVu.Location = new System.Drawing.Point(3, 16);
             this.lsvChucVu.Name = "lsvChucVu";
             this.lsvChucVu.Size = new System.Drawing.Size(370, 482);
             this.lsvChucVu.TabIndex = 0;
             this.lsvChucVu.UseCompatibleStateImageBehavior = false;
             this.lsvChucVu.View = System.Windows.Forms.View.Details;
-            this.lsvChucVu.SelectedIndexChanged += new System.EventHandler(this.lsvChucVu_SelectedIndexChanged);
             this.lsvChucVu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsvChucVu_MouseClick);
             // 
-            // colMaCV
+            // columnHeader1
             // 
-            this.colMaCV.Text = "Chức vụ";
-            this.colMaCV.Width = 176;
+            this.columnHeader1.Text = "Mã chức vụ";
+            this.columnHeader1.Width = 188;
             // 
-            // colTenCV
+            // columnHeader2
             // 
-            this.colTenCV.Text = "Tên chức vụ";
-            this.colTenCV.Width = 190;
+            this.columnHeader2.Text = "Tên chức vụ";
+            this.columnHeader2.Width = 174;
             // 
             // groupBox3
             // 
@@ -321,7 +321,7 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ListView lsvChucVu;
-        private System.Windows.Forms.ColumnHeader colMaCV;
-        private System.Windows.Forms.ColumnHeader colTenCV;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

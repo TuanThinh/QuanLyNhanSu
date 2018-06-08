@@ -13,7 +13,7 @@ namespace QuanLyNhanSu.DATA.AddData
     {
         public void AddProc(NhanVien nhanvien)
         {
-            SqlConnection conn = new SqlConnection("Server = DLC-20180225XEC\\TRUNGNGUYEN;Database=QuanLyNhanSu;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=.;Database=QuanLyNhanSu;Integrated Security=true");
 
             try
             {

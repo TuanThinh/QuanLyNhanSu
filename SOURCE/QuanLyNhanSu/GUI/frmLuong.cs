@@ -8,18 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using QuanLyNhanSu.DATA; using QuanLyNhanSu.DATA.AddData;
-
+using QuanLyNhanSu.DATA;
+using QuanLyNhanSu.DATA.AddData;
+using QuanLyNhanSu.DATA.EditData;
+using QuanLyNhanSu.ENTITY;
 
 namespace QuanLyNhanSu.GUI
 {
     public partial class frmLuong : Form
     {
+        AddLuong addLuong = new AddLuong();
+        EditThongTinLuong editThongTinLuong = new EditThongTinLuong();
         public frmLuong()
         {
             InitializeComponent();
         }
-
+        bool kt;
         public void lockControl()
         {
             txtBacLuong.Enabled = false;
@@ -44,11 +48,12 @@ namespace QuanLyNhanSu.GUI
 
         private void frmLuong_Load(object sender, EventArgs e)
         {
-
+            DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
+            nd.checkPermissions(btnThem, btnSua, btnXoa);
             lsvLuong.Items.Clear();
             try
             {
-                SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NE70A7B\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
                 SqlCommand com = new SqlCommand("Select *from LUONG", conn);
                 conn.Open();
                 SqlDataReader dr = com.ExecuteReader();
@@ -78,11 +83,26 @@ namespace QuanLyNhanSu.GUI
         {
             openControl();
             txtBacLuong.Focus();
+            kt = true;
+            btnSua.Enabled = false;             btnXoa.Enabled = false;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             lockControl();
+            float bacluong = float.Parse(txtBacLuong.Text.Trim());
+            float luongCB = float.Parse(txtLuongCB.Text.Trim());
+            float hesoluong = float.Parse(txtHeSoLuong.Text.Trim());
+            float hesophucap = float.Parse(txtHeSoPhuCap.Text.Trim());
+            Luong luong = new Luong(bacluong, luongCB, hesoluong, hesophucap);
+            if (kt==true)
+            {
+                addLuong.AddProc(luong);
+            }
+            else
+            {
+                editThongTinLuong.ExcuteProc(luong);
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -93,7 +113,7 @@ namespace QuanLyNhanSu.GUI
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             lsvLuong.Items.Clear();
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NE70A7B\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
             conn.Open();
             SqlDataReader dr = null;
             SqlCommand cmd = null;
@@ -140,6 +160,30 @@ namespace QuanLyNhanSu.GUI
                     addList(dr);
                 }
             }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            openControl();
+            kt = false;
+            btnThem.Enabled = false;             btnXoa.Enabled = false;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string query = "delete from LUONG where BacLuong = '" + txtBacLuong.Text.Trim() + "'";
+            DAL.Connect conn = new DAL.Connect();
+            conn.execNonQuery(query);
+        }
+
+        private void lsvLuong_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            txtBacLuong.Text = lsvLuong.SelectedItems[0].SubItems[0].Text;
+            txtLuongCB.Text = lsvLuong.SelectedItems[0].SubItems[1].Text;
+            txtHeSoLuong.Text = lsvLuong.SelectedItems[0].SubItems[2].Text;
+            txtHeSoPhuCap.Text = lsvLuong.SelectedItems[0].SubItems[3].Text;
         }
     }
 }

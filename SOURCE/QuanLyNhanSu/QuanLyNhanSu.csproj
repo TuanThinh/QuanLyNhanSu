@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Connect.cs" />
+    <Compile Include="DAL\NguoiDung_Controller.cs" />
     <Compile Include="DATA\AddData\AddChucvu.cs" />
     <Compile Include="DATA\AddData\AddHopDongLaoDong.cs" />
     <Compile Include="DATA\AddData\AddKhenThuong_KyLuat.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="ENTITY\HopDongLaoDong.cs" />
     <Compile Include="ENTITY\KhenThuongKyLuat.cs" />
     <Compile Include="ENTITY\Luong.cs" />
+    <Compile Include="ENTITY\NguoiDung.cs" />
     <Compile Include="ENTITY\NhanVien.cs" />
     <Compile Include="ENTITY\PhongBan.cs" />
     <Compile Include="ENTITY\SoQDKhenThuongKyLuat.cs" />
@@ -79,6 +82,18 @@
     </Compile>
     <Compile Include="GUI\frmChucVu.Designer.cs">
       <DependentUpon>frmChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmHopDongLaoDong.cs">
       <SubType>Form</SubType>
@@ -103,6 +118,12 @@
     </Compile>
     <Compile Include="GUI\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmNguoiDung.Designer.cs">
+      <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmNhanSu.cs">
       <SubType>Form</SubType>
@@ -169,6 +190,12 @@
     <EmbeddedResource Include="GUI\frmChucVu.resx">
       <DependentUpon>frmChucVu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmHopDongLaoDong.resx">
       <DependentUpon>frmHopDongLaoDong.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmNguoiDung.resx">
+      <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhanSu.resx">
       <DependentUpon>frmNhanSu.cs</DependentUpon>
@@ -235,7 +265,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\" />
+    <None Include="Resources\if_Login Manager_72611.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Symbol-Add.ico" />
@@ -266,6 +296,21 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_kservices_156602.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_view_text_18721.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d bar chart1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Help_Circle_Blue_342251.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tinh-hinh-cua-moi-truong-kinh-doanh-viet-nam-hien-nay1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

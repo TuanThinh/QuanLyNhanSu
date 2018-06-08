@@ -163,6 +163,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -437,6 +438,8 @@
             this.colMaTDHV,
             this.colBacLuong});
             this.lsvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvNhanVien.FullRowSelect = true;
+            this.lsvNhanVien.GridLines = true;
             this.lsvNhanVien.Location = new System.Drawing.Point(3, 16);
             this.lsvNhanVien.Name = "lsvNhanVien";
             this.lsvNhanVien.Size = new System.Drawing.Size(972, 336);

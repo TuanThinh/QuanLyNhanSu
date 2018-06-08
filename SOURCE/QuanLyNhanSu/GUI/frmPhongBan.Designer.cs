@@ -119,6 +119,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -252,6 +253,8 @@
             this.colDiaChi,
             this.colSDT});
             this.lsvPhongBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvPhongBan.FullRowSelect = true;
+            this.lsvPhongBan.GridLines = true;
             this.lsvPhongBan.Location = new System.Drawing.Point(3, 16);
             this.lsvPhongBan.Name = "lsvPhongBan";
             this.lsvPhongBan.Size = new System.Drawing.Size(456, 446);

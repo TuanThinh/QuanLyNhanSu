@@ -114,6 +114,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -126,6 +127,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -226,12 +228,15 @@
             this.colLyDo,
             this.colHinhThuc});
             this.lsvSoQDKhenThuongKyLuat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvSoQDKhenThuongKyLuat.FullRowSelect = true;
+            this.lsvSoQDKhenThuongKyLuat.GridLines = true;
             this.lsvSoQDKhenThuongKyLuat.Location = new System.Drawing.Point(3, 16);
             this.lsvSoQDKhenThuongKyLuat.Name = "lsvSoQDKhenThuongKyLuat";
             this.lsvSoQDKhenThuongKyLuat.Size = new System.Drawing.Size(456, 446);
             this.lsvSoQDKhenThuongKyLuat.TabIndex = 0;
             this.lsvSoQDKhenThuongKyLuat.UseCompatibleStateImageBehavior = false;
             this.lsvSoQDKhenThuongKyLuat.View = System.Windows.Forms.View.Details;
+            this.lsvSoQDKhenThuongKyLuat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsvSoQDKhenThuongKyLuat_MouseClick);
             // 
             // colSoQDKhenThuongKyLuat
             // 

@@ -87,5 +87,10 @@ namespace QuanLyNhanSu.GUI
         {
 
         }
+
+        private void btnXong_Click_1(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = HienDL("select A.MaNV as N'Mã NV',A.HoTen as N'Họ và Tên',A.MaCV as N'Mã Chức Vụ',B.TenCV as N'Tên Chức Vụ' from NHANVIEN  A inner join CHUCVU  B on A.MaCV = B.MaCV and B.MaCV  Like '%" + txtKeyValue.Text + "%'");
+        }
     }
 }

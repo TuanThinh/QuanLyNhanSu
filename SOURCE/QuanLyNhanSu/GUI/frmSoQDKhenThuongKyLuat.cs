@@ -6,7 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms; using QuanLyNhanSu.DATA.AddData; using QuanLyNhanSu.DATA.EditData; using QuanLyNhanSu.ENTITY;
+using System.Windows.Forms;
+using QuanLyNhanSu.DATA.AddData;
+using QuanLyNhanSu.DATA.EditData;
+using QuanLyNhanSu.ENTITY;
 using System.Data.SqlClient;
 
 namespace QuanLyNhanSu.GUI
@@ -19,7 +22,7 @@ namespace QuanLyNhanSu.GUI
         {
             InitializeComponent();
         }
-
+        bool kt;
         public void lockControl()
         {
             txtHinhThuc.Enabled = false;
@@ -43,7 +46,24 @@ namespace QuanLyNhanSu.GUI
         private void frmSoQDKhenThuongKyLuat_Load(object sender, EventArgs e)
         {
             lsvSoQDKhenThuongKyLuat.Items.Clear();
-            try             {                 SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NE70A7B\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");                 SqlCommand com = new SqlCommand("Select *from SOQUYETDINHKHENTHUONG_KYLUAT", conn);                 conn.Open();                 SqlDataReader dr = com.ExecuteReader();                 while (dr.Read())                 {                     addList(dr);                 }             }             catch (Exception ex)             {                  throw;             }
+            DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
+            nd.checkPermissions(btnThem, btnSua, btnXoa);
+            try
+            {
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
+                SqlCommand com = new SqlCommand("Select *from SOQUYETDINHKHENTHUONG_KYLUAT", conn);
+                conn.Open();
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    addList(dr);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
         private void addList(SqlDataReader dr)
@@ -58,6 +78,32 @@ namespace QuanLyNhanSu.GUI
         private void btnLuu_Click(object sender, EventArgs e)
         {
             lockControl();
+            SoQDKhenThuongKyLuat soQDKTKL = new SoQDKhenThuongKyLuat(txtSoQDKhenThuongKyLuat.Text, txtSoQDKhenThuongKyLuat.Text, txtHinhThuc.Text);
+
+            if (kt==true)
+            {
+               if (txtSoQDKhenThuongKyLuat.Text == null)
+                {
+                    MessageBox.Show("Bạn chưa điền đủ thông tin!");
+                }
+                else
+                {
+                    try
+                    {
+                        addSoQDKTKL.AddProc(soQDKTKL);
+                        MessageBox.Show("Lưu Thông tin Thành công!");
+                    }
+                    catch (Exception a)
+                    {
+                        new Exception("Error: " + a.Message);
+                        MessageBox.Show("Thêm thông tin không thành công!", "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -69,13 +115,16 @@ namespace QuanLyNhanSu.GUI
         {
             openControl();
             txtSoQDKhenThuongKyLuat.Focus();
-            SoQDKhenThuongKyLuat soQDKTKL = new SoQDKhenThuongKyLuat(txtSoQDKhenThuongKyLuat.Text, txtSoQDKhenThuongKyLuat.Text, txtHinhThuc.Text);             if (txtSoQDKhenThuongKyLuat.Text == null )             {                 MessageBox.Show("Bạn chưa điền đủ thông tin!");             }             else             {                 try                 {                     addSoQDKTKL.AddProc(soQDKTKL);                     MessageBox.Show("Lưu Thông tin Thành công!");                 }                 catch (Exception a)                 {                     new Exception("Error: " + a.Message);                     MessageBox.Show("Thêm thông tin không thành công!", "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);                 }             }
+            kt = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             lsvSoQDKhenThuongKyLuat.Items.Clear();
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NE70A7B\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
             conn.Open();
             SqlDataReader dr = null;
             SqlCommand cmd = null;
@@ -112,6 +161,30 @@ namespace QuanLyNhanSu.GUI
                     addList(dr);
                 }
             }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            openControl();
+            kt = false;
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string query = "delete from SOQDKKHENTHUONG_KYLUAT where SoQD = '" + txtSoQDKhenThuongKyLuat.Text.Trim() + "'";
+            DAL.Connect conn = new DAL.Connect();
+            conn.execNonQuery(query);
+        }
+
+        private void lsvSoQDKhenThuongKyLuat_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            txtSoQDKhenThuongKyLuat.Text = lsvSoQDKhenThuongKyLuat.SelectedItems[0].SubItems[0].Text;
+            txtLyDo.Text = lsvSoQDKhenThuongKyLuat.SelectedItems[0].SubItems[1].Text;
+            txtHinhThuc.Text = lsvSoQDKhenThuongKyLuat.SelectedItems[0].SubItems[2].Text;
         }
     }
 }

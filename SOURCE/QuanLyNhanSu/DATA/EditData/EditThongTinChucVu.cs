@@ -22,8 +22,8 @@ namespace QuanLyNhanSu.DATA
 
         {
             //SqlConnection conn = DBUtils.GetDBConnection();
-            SqlConnection conn = new SqlConnection("Server=DEVSERVER-WIN7\\SQLEXPRESS;Database=ThucTapNhom_QuanLyNhanSu;Integrated Security=true");
-            // conn.ConnectionString = "Server=DEVSERVER-WIN7\\SQLEXPRESS;Database=ThucTapNhom_QuanLyNhanSu;Integrated Security=true";
+            SqlConnection conn = new SqlConnection("Server=.;Database=QuanLyNhanSu;Integrated Security=true");
+            // conn.ConnectionString = "Server=.;Database=QuanLyNhanSu;Integrated Security=true";
             //Trusted_Connection=true";
 
             try

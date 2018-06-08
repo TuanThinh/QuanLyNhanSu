@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace QuanLyNhanSu.GUI
 {
@@ -20,16 +20,16 @@ namespace QuanLyNhanSu.GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtMKCu.Text.Trim().Equals(DAL.NguoiDung_Controler.matkhau))
+            if (txtMKCu.Text.Trim().Equals(DAL.NguoiDung_Controller.matkhau))
             {
                 if (txtMKMoi.Text.Trim().Equals(txtXacNhan.Text.Trim()))
                 {
-                    string query = "update NGUOIDUNG set MatKhau = '" + txtMKMoi.Text.Trim() + "' where TaiKhoan = '" + DAL.NguoiDung_Controler.taikhoan + "'";
-                    DAL.Connector conn = new DAL.Connector();
+                    string query = "update NGUOIDUNG set MatKhau = '" + txtMKMoi.Text.Trim() + "' where MaNV = '" + DAL.NguoiDung_Controller.MaNV + "'";
+                    DAL.Connect conn = new DAL.Connect();
                     conn.openConnection();
                     SqlCommand cmd = new SqlCommand(query, conn.Conn);
                     cmd.ExecuteNonQuery();
-                    DAL.NguoiDung_Controler.matkhau = txtMKMoi.Text.Trim();
+                    DAL.NguoiDung_Controller.matkhau = txtMKMoi.Text.Trim();
                     this.Close();
                 }
                 else
@@ -49,6 +49,5 @@ namespace QuanLyNhanSu.GUI
         {
             this.Close();
         }
-
     }
 }

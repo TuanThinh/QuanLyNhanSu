@@ -114,6 +114,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -126,6 +127,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -226,12 +228,15 @@
             this.colTenTDHV,
             this.colChuyenNganhHoc});
             this.lsvTrinhDoHocVan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvTrinhDoHocVan.FullRowSelect = true;
+            this.lsvTrinhDoHocVan.GridLines = true;
             this.lsvTrinhDoHocVan.Location = new System.Drawing.Point(3, 16);
             this.lsvTrinhDoHocVan.Name = "lsvTrinhDoHocVan";
             this.lsvTrinhDoHocVan.Size = new System.Drawing.Size(456, 446);
             this.lsvTrinhDoHocVan.TabIndex = 0;
             this.lsvTrinhDoHocVan.UseCompatibleStateImageBehavior = false;
             this.lsvTrinhDoHocVan.View = System.Windows.Forms.View.Details;
+            this.lsvTrinhDoHocVan.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsvTrinhDoHocVan_MouseClick);
             // 
             // colMaTDHC
             // 

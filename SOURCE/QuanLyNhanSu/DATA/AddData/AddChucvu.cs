@@ -14,14 +14,15 @@ namespace QuanLyNhanSu.DATA.AddData
     {
         public void AddProc(ChucVu chucvu)
         {
-            SqlConnection conn = new SqlConnection("Server = DLC-20180225XEC\\TRUNGNGUYEN;Database=QuanLyNhanSu;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=.;Database=QuanLyNhanSu;Integrated Security=true");
 
             try
             {
                 conn.Open();
                 //Console.WriteLine("haha");
-                SqlCommand cmd = new SqlCommand("ADDCHUCVU", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                string query = "insert into CHUCVU(MaCV, TenCV) values (@MaCV, @TenCV)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                //cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add(new SqlParameter("@MaCV", SqlDbType.Char, 10)).Value = chucvu.MaChucVu;
                 cmd.Parameters.Add(new SqlParameter("@TenCV", SqlDbType.Text)).Value = chucvu.TenChucVu;

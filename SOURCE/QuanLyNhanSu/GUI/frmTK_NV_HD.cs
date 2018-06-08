@@ -77,5 +77,12 @@ namespace QuanLyNhanSu.GUI
         {
 
         }
+
+        private void btnXong_Click_1(object sender, EventArgs e)
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DataSource = HienDL("select A.MaNV as N'Mã NV',A.HoTen as N'Họ và Tên',A.MaHD as N'Mã Hợp Dồng',B.LoaiHD as N'Loại Hợp Dồng',B.TuNgay as N'Từ Ngày',B.DenNgay as N'Đến Ngày' from NHANVIEN  A inner join HOPDONGLAODONG B on A.MaNV = B.MaNV and A.MaNV Like '%" + txtKeyValue.Text + "%'");
+
+        }
     }
 }
