@@ -12,12 +12,12 @@ namespace QuanLyNhanSu.DATA
         public static SqlConnection GetDBConnection()
         {
             //data source:
-            string datasource = @"DEVSERVER-WIN7\SQLEXPRESS";
+            string datasource = @"PC\NGUYENMTA";
 
             //
             string database = "QuanLyNhanSu";
-            string username = "sa";
-            string password = "1";
+            string username = "";
+            string password = "";
 
             string connString =  @"Data Source="+datasource+";Initial Catalog="+database+";Persist Security Info=True;User ID="+username+";Password="+password;
 

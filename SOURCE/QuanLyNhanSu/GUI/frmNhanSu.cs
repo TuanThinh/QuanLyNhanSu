@@ -5,13 +5,21 @@ namespace QuanLyNhanSu.GUI {     public partial class frmNhanSu : Form    
                                         txtDanToc.Text, txtQuocTich.Text, txtSDT.Text, txtMaPB.Text, txtMaCV.Text,
                                         txtMaTDHV.Text, txtBacLuong.Text);             if (kt==true)
             {
-                try
+                if (txtMaNV.Text == null || txtHoTen.Text == null || txtMaCV.Text == null || txtMaTDHV.Text == null)
                 {
-                    addNhanVien.AddProc(nhanVien);
+                    MessageBox.Show("Bạn chưa điền đủ thông tin!");
                 }
-                catch (Exception)
+                else
                 {
-                    MessageBox.Show("Sửa thông tin nhân viên không thành công", "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    try
+                    {
+                        addNhanVien.AddProc(nhanVien);
+                        MessageBox.Show("Lưu Thông tin Thành công!");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Thêm thông tin không thành công!", "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
             }             else

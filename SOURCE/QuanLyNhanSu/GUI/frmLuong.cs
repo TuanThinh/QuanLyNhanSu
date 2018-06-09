@@ -97,7 +97,22 @@ namespace QuanLyNhanSu.GUI
             Luong luong = new Luong(bacluong, luongCB, hesoluong, hesophucap);
             if (kt==true)
             {
-                addLuong.AddProc(luong);
+                if (txtBacLuong.Text == null || txtHeSoLuong.Text == null || txtLuongCB.Text == null)
+                {
+                    MessageBox.Show("Bạn chưa điền đủ thông tin!");
+                }
+                else
+                {
+                    try
+                    {
+                        addLuong.AddProc(luong);
+                        MessageBox.Show("Lưu Thông tin Thành công!");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Thêm thông tin không thành công!", "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
             {

@@ -2,13 +2,21 @@
         AddKhenThuong_KyLuat addKhenThuong_KyLuat = new AddKhenThuong_KyLuat();         public frmKhenThuongKyLuat()         {             InitializeComponent();         }         bool kt;         public void lockControl()         {             txtMaNV.Enabled = false;             txtSoQDKhenThuongKyLuat.Enabled = false;             dtThoiGian.Enabled = false;             btnHuy.Enabled = false;             btnLuu.Enabled = false;             btnSua.Enabled = false;             btnXoa.Enabled = false;         }          public void openControl()         {             txtMaNV.Enabled = true;             txtSoQDKhenThuongKyLuat.Enabled = true;             dtThoiGian.Enabled = true;             btnHuy.Enabled = true;             btnLuu.Enabled = true;         }          private void frmKhenThuongKyLuat_Load(object sender, EventArgs e)         {             lsvKhenThuongKyLuat.Items.Clear();              try             {                 SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");                 SqlCommand com = new SqlCommand("Select *from KHENTHUONG_KYLUAT", conn);                 conn.Open();                 SqlDataReader dr = com.ExecuteReader();                 while (dr.Read())                 {                     addList(dr);                 }             }             catch (Exception ex)             {                  throw;             }          }          private void addList(SqlDataReader dr)         {             ListViewItem item = new ListViewItem();             item.Text = dr["MaNV"].ToString();             item.SubItems.Add(dr["SoQD"].ToString());             item.SubItems.Add(dr["ThoiGian"].ToString());             lsvKhenThuongKyLuat.Items.Add(item);         }          private void btnLuu_Click(object sender, EventArgs e)         {             lockControl();
             KhenThuongKyLuat khenThuongKyLuat = new KhenThuongKyLuat(txtMaNV.Text, txtSoQDKhenThuongKyLuat.Text, dtThoiGian.Value);             if (kt==true)
             {
-                try
+                if (txtMaNV.Text == null || txtSoQDKhenThuongKyLuat.Text == null )
                 {
-                    addKhenThuong_KyLuat.AddProc(khenThuongKyLuat);
+                    MessageBox.Show("Bạn chưa điền đủ thông tin!");
                 }
-                catch (Exception)
+                else
                 {
-                    MessageBox.Show("Sửa thông tin khen thưởng kỷ luật không thành công", "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    try
+                    {
+                        addKhenThuong_KyLuat.AddProc(khenThuongKyLuat);
+                        MessageBox.Show("Lưu Thông tin Thành công!");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Thêm thông tin không thành công!", "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }             else
             {
