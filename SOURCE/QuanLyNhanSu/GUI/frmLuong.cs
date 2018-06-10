@@ -10,15 +10,14 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using QuanLyNhanSu.DATA;
 using QuanLyNhanSu.DATA.AddData;
-using QuanLyNhanSu.DATA.EditData;
 using QuanLyNhanSu.ENTITY;
+using QuanLyNhanSu.DAL;
 
 namespace QuanLyNhanSu.GUI
 {
     public partial class frmLuong : Form
     {
         AddLuong addLuong = new AddLuong();
-        EditThongTinLuong editThongTinLuong = new EditThongTinLuong();
         public frmLuong()
         {
             InitializeComponent();
@@ -84,7 +83,8 @@ namespace QuanLyNhanSu.GUI
             openControl();
             txtBacLuong.Focus();
             kt = true;
-            btnSua.Enabled = false;             btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -116,7 +116,8 @@ namespace QuanLyNhanSu.GUI
             }
             else
             {
-                editThongTinLuong.ExcuteProc(luong);
+                Luong_Controller luong_Controller = new Luong_Controller();
+                luong_Controller.EditLuong(luong);
             }
         }
 
@@ -181,7 +182,8 @@ namespace QuanLyNhanSu.GUI
         {
             openControl();
             kt = false;
-            btnThem.Enabled = false;             btnXoa.Enabled = false;
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

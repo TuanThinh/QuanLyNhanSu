@@ -45,8 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\ChucVu_Controller.cs" />
     <Compile Include="DAL\Connect.cs" />
+    <Compile Include="DAL\HopDongLaoDong_Controller.cs" />
+    <Compile Include="DAL\KhenThuongKyLuat_Controller.cs" />
+    <Compile Include="DAL\Luong_Controller.cs" />
     <Compile Include="DAL\NguoiDung_Controller.cs" />
+    <Compile Include="DAL\NhanVien_Controller.cs" />
+    <Compile Include="DAL\PhongBan_Controller.cs" />
+    <Compile Include="DAL\SoQDKTKL_Controller.cs" />
+    <Compile Include="DAL\TrinhDoHocVan_Controller.cs" />
     <Compile Include="DATA\AddData\AddChucvu.cs" />
     <Compile Include="DATA\AddData\AddHopDongLaoDong.cs" />
     <Compile Include="DATA\AddData\AddKhenThuong_KyLuat.cs" />
@@ -56,12 +64,6 @@
     <Compile Include="DATA\AddData\AddSoQDKTKL.cs" />
     <Compile Include="DATA\AddData\AddTrinhDoHocVan.cs" />
     <Compile Include="DATA\DBUtils.cs" />
-    <Compile Include="DATA\EditData\EditThongTinChucVu.cs" />
-    <Compile Include="DATA\EditData\EditThongTinHopDongLaoDong.cs" />
-    <Compile Include="DATA\EditData\EditThongTinKhenThuongKyLuat.cs" />
-    <Compile Include="DATA\EditData\EditThongTinLuong.cs" />
-    <Compile Include="DATA\EditData\EditThongTinNhanVien.cs" />
-    <Compile Include="DATA\EditData\EditThongTinPhongBan.cs" />
     <Compile Include="ENTITY\ChucVu.cs" />
     <Compile Include="ENTITY\HopDongLaoDong.cs" />
     <Compile Include="ENTITY\KhenThuongKyLuat.cs" />

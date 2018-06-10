@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyNhanSu.DATA.AddData;
-using QuanLyNhanSu.DATA.EditData;
 using QuanLyNhanSu.ENTITY;
 using System.Data.SqlClient;
+using QuanLyNhanSu.DAL;
 
 namespace QuanLyNhanSu.GUI
 {
@@ -102,7 +102,8 @@ namespace QuanLyNhanSu.GUI
             }
             else
             {
-                
+                SoQDKTKL_Controller soQDKTKL_Controller = new SoQDKTKL_Controller();
+                soQDKTKL_Controller.EditSQDKTKL(soQDKTKL);
             }
         }
 

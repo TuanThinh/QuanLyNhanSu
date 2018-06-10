@@ -195,3 +195,30 @@ E:\Learn\Thực tập Nhóm\BaiCuoiKy\QuanLyNhanSu-master\SOURCE\QuanLyNhanSu\ob
 E:\Learn\Thực tập Nhóm\BaiCuoiKy\QuanLyNhanSu-master\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTrinhDoHocVan.resources
 E:\Learn\Thực tập Nhóm\BaiCuoiKy\QuanLyNhanSu-master\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
 E:\Learn\Thực tập Nhóm\BaiCuoiKy\QuanLyNhanSu-master\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.Cache
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csprojResolveAssemblyReference.cache
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmChucVu.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmDangNhap.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmDoiMatKhau.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmHopDongLaoDong.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmKhenThuongKyLuat.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmLuong.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmMain.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmNguoiDung.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmNhanSu.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmPhongBan.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmSoQDKhenThuongKyLuat.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_DSNV.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_CV.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_HD.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_KT_KL.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_PB.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTK_NV_TDHV.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.GUI.frmTrinhDoHocVan.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.cache
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.CoreCompileInputs.cache
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.pdb
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe.config
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe
+D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.pdb
