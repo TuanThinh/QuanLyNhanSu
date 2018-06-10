@@ -48,6 +48,11 @@ namespace QuanLyNhanSu.GUI
 
         private void frmKhenThuongKyLuat_Load(object sender, EventArgs e)
         {
+            loadList();
+        }
+
+        private void loadList()
+        {
             lsvKhenThuongKyLuat.Items.Clear();
 
             try
@@ -66,7 +71,6 @@ namespace QuanLyNhanSu.GUI
 
                 throw;
             }
-
         }
 
         private void addList(SqlDataReader dr)
@@ -197,6 +201,11 @@ namespace QuanLyNhanSu.GUI
             string query = "delete from KHENTHUONG_KYLUAT where MaNV = '" + txtMaNV.Text.Trim() + "'and SoQD = '" + txtSoQDKhenThuongKyLuat.Text.Trim() + "'";
             DAL.Connect conn = new DAL.Connect();
             conn.execNonQuery(query);
+        }
+
+        private void btnRf_Click(object sender, EventArgs e)
+        {
+            loadList();
         }
     }
 }

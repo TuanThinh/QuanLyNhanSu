@@ -52,25 +52,10 @@ namespace QuanLyNhanSu.GUI
             lockControl();
             DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
-            lsvChucVu.Items.Clear();
-            try
-            {
-                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
-                SqlCommand com = new SqlCommand("Select *from CHUCVU", conn);
-                conn.Open();
-                SqlDataReader dr = com.ExecuteReader();
-                while (dr.Read())
-                {
-                    addList(dr);
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-
+            loadList();
         }
+
+        private void loadList()         {             lsvChucVu.Items.Clear();             try             {                 SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NE70A7B\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");                 SqlCommand com = new SqlCommand("Select * from CHUCVU", conn);                 conn.Open();                 SqlDataReader dr = com.ExecuteReader();                 while (dr.Read())                 {                     addList(dr);                 }             }             catch (Exception ex)             {                  throw;             }         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -201,6 +186,11 @@ namespace QuanLyNhanSu.GUI
             string query = "delete from CHUCVU where MaCV = '" + txtMaCV.Text.Trim() + "'";
             DAL.Connect conn = new DAL.Connect();
             conn.execNonQuery(query);
+        }
+
+        private void btnRf_Click(object sender, EventArgs e)
+        {
+            loadList();
         }
     }
 }

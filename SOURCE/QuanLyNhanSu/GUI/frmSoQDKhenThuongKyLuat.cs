@@ -45,9 +45,14 @@ namespace QuanLyNhanSu.GUI
 
         private void frmSoQDKhenThuongKyLuat_Load(object sender, EventArgs e)
         {
-            lsvSoQDKhenThuongKyLuat.Items.Clear();
             DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
+            loadList();
+        }
+
+        private void loadList()
+        {
+            lsvSoQDKhenThuongKyLuat.Items.Clear();
             try
             {
                 SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
@@ -186,6 +191,11 @@ namespace QuanLyNhanSu.GUI
             txtSoQDKhenThuongKyLuat.Text = lsvSoQDKhenThuongKyLuat.SelectedItems[0].SubItems[0].Text;
             txtLyDo.Text = lsvSoQDKhenThuongKyLuat.SelectedItems[0].SubItems[1].Text;
             txtHinhThuc.Text = lsvSoQDKhenThuongKyLuat.SelectedItems[0].SubItems[2].Text;
+        }
+
+        private void btnRf_Click(object sender, EventArgs e)
+        {
+            loadList();
         }
     }
 }

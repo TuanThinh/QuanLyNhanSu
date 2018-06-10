@@ -49,6 +49,11 @@ namespace QuanLyNhanSu.GUI
         {
             DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
+            loadList();
+        }
+
+        private void loadList()
+        {
             lsvLuong.Items.Clear();
             try
             {
@@ -201,6 +206,11 @@ namespace QuanLyNhanSu.GUI
             txtLuongCB.Text = lsvLuong.SelectedItems[0].SubItems[1].Text;
             txtHeSoLuong.Text = lsvLuong.SelectedItems[0].SubItems[2].Text;
             txtHeSoPhuCap.Text = lsvLuong.SelectedItems[0].SubItems[3].Text;
+        }
+
+        private void btnRf_Click(object sender, EventArgs e)
+        {
+            loadList();
         }
     }
 }

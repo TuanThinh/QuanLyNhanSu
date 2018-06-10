@@ -48,9 +48,14 @@ namespace QuanLyNhanSu.GUI
 
         private void frmTrinhDoHocVan_Load(object sender, EventArgs e)
         {
-            lsvTrinhDoHocVan.Items.Clear();
             DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
+            loadList();
+        }
+
+        private void loadList()
+        {
+            lsvTrinhDoHocVan.Items.Clear();
             try
             {
                 SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
@@ -186,6 +191,11 @@ namespace QuanLyNhanSu.GUI
             txtMaTDHV.Text = lsvTrinhDoHocVan.SelectedItems[0].SubItems[0].Text;
             txtTenTDHV.Text = lsvTrinhDoHocVan.SelectedItems[0].SubItems[1].Text;
             txtChuyenNganhHoc.Text = lsvTrinhDoHocVan.SelectedItems[0].SubItems[2].Text;
+        }
+
+        private void btnRf_Click(object sender, EventArgs e)
+        {
+            loadList();
         }
     }
 }

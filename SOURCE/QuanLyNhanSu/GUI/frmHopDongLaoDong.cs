@@ -54,6 +54,11 @@ namespace QuanLyNhanSu.GUI
         {
             DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
+            loadList();
+        }
+
+        private void loadList()
+        {
             lsvHopDongLaoDong.Items.Clear();
             try
             {
@@ -225,6 +230,11 @@ namespace QuanLyNhanSu.GUI
             string query = "delete from HOPDONGLAODONG where MaHD = '" + txtMaHopDong.Text.Trim() + "'";
             DAL.Connect conn = new DAL.Connect();
             conn.execNonQuery(query);
+        }
+
+        private void btnRf_Click(object sender, EventArgs e)
+        {
+            loadList();
         }
     }
 }

@@ -48,6 +48,7 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnRf = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -227,6 +228,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnRf);
             this.groupBox3.Controls.Add(this.btnTimKiem);
             this.groupBox3.Controls.Add(this.txtTimKiem);
             this.groupBox3.Controls.Add(this.comboBox1);
@@ -242,9 +244,9 @@
             // 
             this.btnTimKiem.Image = global::QuanLyNhanSu.Properties.Resources.Search_icon;
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(295, 15);
+            this.btnTimKiem.Location = new System.Drawing.Point(257, 15);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(72, 23);
+            this.btnTimKiem.Size = new System.Drawing.Size(69, 23);
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -253,10 +255,10 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(162, 16);
+            this.txtTimKiem.Location = new System.Drawing.Point(149, 15);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(133, 21);
+            this.txtTimKiem.Size = new System.Drawing.Size(109, 21);
             this.txtTimKiem.TabIndex = 2;
             // 
             // comboBox1
@@ -265,20 +267,30 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Mã chức vụ",
             "Tên chức vụ"});
-            this.comboBox1.Location = new System.Drawing.Point(67, 16);
+            this.comboBox1.Location = new System.Drawing.Point(62, 15);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(95, 21);
+            this.comboBox1.Size = new System.Drawing.Size(89, 21);
             this.comboBox1.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 18);
+            this.label3.Location = new System.Drawing.Point(0, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Tìm theo";
+            // 
+            // btnRf
+            // 
+            this.btnRf.Location = new System.Drawing.Point(321, 15);
+            this.btnRf.Name = "btnRf";
+            this.btnRf.Size = new System.Drawing.Size(52, 23);
+            this.btnRf.TabIndex = 6;
+            this.btnRf.Text = "Refresh";
+            this.btnRf.UseVisualStyleBackColor = true;
+            this.btnRf.Click += new System.EventHandler(this.btnRf_Click);
             // 
             // frmChucVu
             // 
@@ -323,5 +335,6 @@
         private System.Windows.Forms.ListView lsvChucVu;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Button btnRf;
     }
 }

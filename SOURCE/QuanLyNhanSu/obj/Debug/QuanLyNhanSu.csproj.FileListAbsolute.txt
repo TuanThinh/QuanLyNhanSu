@@ -222,3 +222,6 @@ D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.p
 D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe.config
 D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe
 D:\SonCao\TTN\GIT_QLNS\QuanLyNhanSu\SOURCE\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.pdb
+D:\Nam 3 Ki 2\TT Nhóm\Thịnh_done\QuanLyNhanSu-master\SOURCE\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe.config
+D:\Nam 3 Ki 2\TT Nhóm\Thịnh_done\QuanLyNhanSu-master\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe
+D:\Nam 3 Ki 2\TT Nhóm\Thịnh_done\QuanLyNhanSu-master\SOURCE\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.pdb
