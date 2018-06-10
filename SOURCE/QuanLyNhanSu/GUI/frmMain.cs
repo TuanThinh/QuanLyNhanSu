@@ -153,6 +153,22 @@ namespace QuanLyNhanSu.GUI
                     mnuDM.Enabled = true;
                 }
             }
+            this.KeyPreview = true;
+        }
+
+        private void tRỢGIÚPToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmTroGiup frm = new frmTroGiup();
+            frm.ShowDialog();
+        }
+
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                frmTroGiup frm = new frmTroGiup();
+                frm.ShowDialog();
+            }
         }
     }
 }

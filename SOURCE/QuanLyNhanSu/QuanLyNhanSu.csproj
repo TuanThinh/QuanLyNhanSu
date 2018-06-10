@@ -187,6 +187,12 @@
     <Compile Include="GUI\frmTrinhDoHocVan.Designer.cs">
       <DependentUpon>frmTrinhDoHocVan.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmTroGiup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTroGiup.Designer.cs">
+      <DependentUpon>frmTroGiup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\frmChucVu.resx">
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmTrinhDoHocVan.resx">
       <DependentUpon>frmTrinhDoHocVan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTroGiup.resx">
+      <DependentUpon>frmTroGiup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -313,6 +322,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tinh-hinh-cua-moi-truong-kinh-doanh-viet-nam-hien-nay1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\odoo-erp-support.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

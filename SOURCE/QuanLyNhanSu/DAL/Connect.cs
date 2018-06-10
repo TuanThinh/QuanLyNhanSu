@@ -10,7 +10,7 @@ namespace QuanLyNhanSu.DAL
 {
     class Connect
     {
-        private string strConn = @"Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
+        private string strConn = @"Data Source=DESKTOP-UH6SR0N\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True";
         private SqlCommand cmd = null;
         private SqlConnection conn = null;
 
