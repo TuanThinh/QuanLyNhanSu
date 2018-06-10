@@ -129,6 +129,7 @@ namespace QuanLyNhanSu.GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+
             string query = "select Them, Sua, Xoa, CreateLogin from NGUOIDUNG where MaNV = '" + DAL.NguoiDung_Controller.MaNV + "' and MatKhau = '" + DAL.NguoiDung_Controller.matkhau + "'";
             DAL.Connect sqlConn = new DAL.Connect();
             sqlConn.openConnection();
@@ -152,6 +153,22 @@ namespace QuanLyNhanSu.GUI
                 {
                     mnuDM.Enabled = true;
                 }
+            }
+            this.KeyPreview = true;
+        }
+
+        private void tRỢGIÚPToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmTroGiup frm = new frmTroGiup();
+            frm.ShowDialog();
+        }
+
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                frmTroGiup frm = new frmTroGiup();
+                frm.ShowDialog();
             }
         }
     }
