@@ -18,9 +18,7 @@ namespace QuanLyNhanSu.DATA.AddData
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("ADDLuong", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
+                SqlCommand cmd = new SqlCommand("insert into LUONG(BacLuong, LuongCB, HeSoLuong, HeSoPhuCap) values (@BacLuong, @LuongCB, @heSoLuong, @HeSoPhuCap)", conn);
                 cmd.Parameters.Add(new SqlParameter("@BacLuong", SqlDbType.Float)).Value = Luong.BacLuong;
                 cmd.Parameters.Add(new SqlParameter("@LuongCB", SqlDbType.Float)).Value = Luong.LuongCoBan;
                 cmd.Parameters.Add(new SqlParameter("@HeSoLuong", SqlDbType.Float)).Value = Luong.HeSoLuong;

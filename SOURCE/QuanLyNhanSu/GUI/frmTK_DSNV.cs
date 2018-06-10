@@ -17,20 +17,20 @@ namespace QuanLyNhanSu.GUI
         {
             InitializeComponent();
         }
-        public SqlConnection cn = new SqlConnection();
+        public SqlConnection cn = new SqlConnection(@"Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
         public void Ketnoi()
         {
             try
             {
                 if (cn.State == 0)
                 {
-                //    cn.ConnectionString = @"Data Source=HIEP\SQLEXPRESS;Initial Catalog=NHANVIEN;Integrated Security=True";
+                    //cn.ConnectionString = @"Data Source=.;Initial Catalog=NHANVIEN;Integrated Security=True";
                     cn.Open();
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+
             }
         }
         public void Ngatketnoi()

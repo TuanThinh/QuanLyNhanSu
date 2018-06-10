@@ -45,6 +45,7 @@ namespace QuanLyNhanSu.GUI
 
         private void frmSoQDKhenThuongKyLuat_Load(object sender, EventArgs e)
         {
+            lockControl();
             DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
             loadList();
@@ -55,10 +56,8 @@ namespace QuanLyNhanSu.GUI
             lsvSoQDKhenThuongKyLuat.Items.Clear();
             try
             {
-                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
-                SqlCommand com = new SqlCommand("Select *from SOQUYETDINHKHENTHUONG_KYLUAT", conn);
-                conn.Open();
-                SqlDataReader dr = com.ExecuteReader();
+                DAL.Connect sql = new Connect();
+                SqlDataReader dr = sql.execCommand("Select * from SOQUYETDINHKHENTHUONG_KYLUAT");
                 while (dr.Read())
                 {
                     addList(dr);
@@ -110,6 +109,7 @@ namespace QuanLyNhanSu.GUI
                 SoQDKTKL_Controller soQDKTKL_Controller = new SoQDKTKL_Controller();
                 soQDKTKL_Controller.EditSQDKTKL(soQDKTKL);
             }
+            loadList();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -182,6 +182,7 @@ namespace QuanLyNhanSu.GUI
             string query = "delete from SOQDKKHENTHUONG_KYLUAT where SoQD = '" + txtSoQDKhenThuongKyLuat.Text.Trim() + "'";
             DAL.Connect conn = new DAL.Connect();
             conn.execNonQuery(query);
+            loadList();
         }
 
         private void lsvSoQDKhenThuongKyLuat_MouseClick(object sender, MouseEventArgs e)

@@ -16,7 +16,7 @@ namespace QuanLyNhanSu.DAL
             try
             {
                 openConnection();
-                string query = "update LUONG set TenPB = @ten, DiaChi = @diachi, SDT = @sdt where MaPB = @ma";
+                string query = "update PHONGBAN set TenPB = @ten, DiaChi = @diachi, SDT = @sdt where MaPB = @ma";
                 SqlCommand cmd = new SqlCommand(query, Conn);
                 cmd.Parameters.AddWithValue("@ma", phongBan.MaPhongBan);
                 cmd.Parameters.Add(new SqlParameter("@ten", SqlDbType.NVarChar)).Value = phongBan.TenPhongBan;

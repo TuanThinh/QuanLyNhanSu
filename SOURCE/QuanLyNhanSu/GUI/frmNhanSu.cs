@@ -88,10 +88,8 @@ namespace QuanLyNhanSu.GUI
             lsvNhanVien.Items.Clear();
             try
             {
-                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
-                SqlCommand com = new SqlCommand("Select *from NHANVIEN", conn);
-                conn.Open();
-                SqlDataReader dr = com.ExecuteReader();
+                DAL.Connect sql = new Connect();
+                SqlDataReader dr = sql.execCommand("Select * from NHANVIEN");
                 while (dr.Read())
                 {//ok
                     addList(dr);
@@ -100,7 +98,6 @@ namespace QuanLyNhanSu.GUI
             catch (Exception ex)
             {
 
-                throw;
             }
         }
 
@@ -162,6 +159,7 @@ namespace QuanLyNhanSu.GUI
                 NhanVien_Controller nhanVien_Controller = new NhanVien_Controller();
                 nhanVien_Controller.EditNhanVien(nhanVien);
             }
+            loadList();
         }
         
         private void btnHuy_Click(object sender, EventArgs e)
@@ -192,15 +190,22 @@ namespace QuanLyNhanSu.GUI
             }
             // ngay sinh
             //DateTime.ParseExact(myStr, "yy/MM/dd h:mm:ss tt", CultureInfo.InvariantCulture);
-            dtNgaySinh.Value = DateTime.ParseExact(lsvNhanVien.SelectedItems[0].SubItems[3].Text, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);   
-            txtDiaChi.Text = lsvNhanVien.SelectedItems[0].SubItems[4].Text;
-            txtDanToc.Text = lsvNhanVien.SelectedItems[0].SubItems[5].Text;
-            txtQuocTich.Text = lsvNhanVien.SelectedItems[0].SubItems[6].Text;
-            txtSDT.Text = lsvNhanVien.SelectedItems[0].SubItems[7].Text;
-            txtMaPB.Text = lsvNhanVien.SelectedItems[0].SubItems[8].Text;
-            txtMaCV.Text = lsvNhanVien.SelectedItems[0].SubItems[9].Text;
-            txtMaTDHV.Text = lsvNhanVien.SelectedItems[0].SubItems[10].Text;
-            txtBacLuong.Text = lsvNhanVien.SelectedItems[0].SubItems[11].Text;
+            try
+            {
+                dtNgaySinh.Value = DateTime.Parse(lsvNhanVien.SelectedItems[0].SubItems[3].Text);
+                txtDiaChi.Text = lsvNhanVien.SelectedItems[0].SubItems[4].Text;
+                txtDanToc.Text = lsvNhanVien.SelectedItems[0].SubItems[5].Text;
+                txtQuocTich.Text = lsvNhanVien.SelectedItems[0].SubItems[6].Text;
+                txtSDT.Text = lsvNhanVien.SelectedItems[0].SubItems[7].Text;
+                txtMaPB.Text = lsvNhanVien.SelectedItems[0].SubItems[8].Text;
+                txtMaCV.Text = lsvNhanVien.SelectedItems[0].SubItems[9].Text;
+                txtMaTDHV.Text = lsvNhanVien.SelectedItems[0].SubItems[10].Text;
+                txtBacLuong.Text = lsvNhanVien.SelectedItems[0].SubItems[11].Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
 
         }
@@ -328,6 +333,7 @@ namespace QuanLyNhanSu.GUI
             string query = "delete from NHANVIEN where MaNV = '" + txtMaNV.Text.Trim() + "'";
             DAL.Connect conn = new DAL.Connect();
             conn.execNonQuery(query);
+            loadList();
         }
     }
 }

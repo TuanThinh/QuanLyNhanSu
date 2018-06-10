@@ -17,7 +17,7 @@ namespace QuanLyNhanSu.GUI
         {
             InitializeComponent();
         }
-        public SqlConnection cn = new SqlConnection();
+        public SqlConnection cn = new SqlConnection(@"Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
         public void Ketnoi()
         {
             try
@@ -70,7 +70,7 @@ namespace QuanLyNhanSu.GUI
         private void BtnXong_Click(object sender, EventArgs e)
         {
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.DataSource = HienDL("select A.MaNV as N'Mã NV',A.HoTen as N'Họ và Tên',A.MaHD as N'Mã Hợp Dồng',B.LoaiHD as N'Loại Hợp Dồng',B.TuNgay as N'Từ Ngày',B.DenNgay as N'Đến Ngày' from NHANVIEN  A inner join HOPDONGLAODONG B on A.MaNV = B.MaNV and A.MaNV Like '%" + txtKeyValue.Text + "%'");
+            dataGridView1.DataSource = HienDL("select A.MaNV as N'Mã NV',A.HoTen as N'Họ và Tên',B.MaHD as N'Mã Hợp Dồng',B.LoaiHD as N'Loại Hợp Dồng',B.TuNgay as N'Từ Ngày',B.DenNgay as N'Đến Ngày' from NHANVIEN  A inner join HOPDONGLAODONG B on A.MaNV = B.MaNV and A.MaNV Like '%" + txtKeyValue.Text + "%'");
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -81,7 +81,7 @@ namespace QuanLyNhanSu.GUI
         private void btnXong_Click_1(object sender, EventArgs e)
         {
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.DataSource = HienDL("select A.MaNV as N'Mã NV',A.HoTen as N'Họ và Tên',A.MaHD as N'Mã Hợp Dồng',B.LoaiHD as N'Loại Hợp Dồng',B.TuNgay as N'Từ Ngày',B.DenNgay as N'Đến Ngày' from NHANVIEN  A inner join HOPDONGLAODONG B on A.MaNV = B.MaNV and A.MaNV Like '%" + txtKeyValue.Text + "%'");
+            dataGridView1.DataSource = HienDL("select A.MaNV as N'Mã NV',A.HoTen as N'Họ và Tên',B.MaHD as N'Mã Hợp Dồng',B.LoaiHD as N'Loại Hợp Dồng',B.TuNgay as N'Từ Ngày',B.DenNgay as N'Đến Ngày' from NHANVIEN  A inner join HOPDONGLAODONG B on A.MaNV = B.MaNV and A.MaNV Like '%" + txtKeyValue.Text + "%'");
 
         }
     }

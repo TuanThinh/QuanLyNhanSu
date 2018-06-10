@@ -19,9 +19,7 @@ namespace QuanLyNhanSu.DATA.AddData
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("ADDKHENTHUONG_KYLUAT", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
+                SqlCommand cmd = new SqlCommand("insert into KHENTHUONG_KYLUAT(MaNV, SoQD, ThoiGian) values (@MaNV, @SoQD, @ThoiGian)", conn);
                 cmd.Parameters.Add(new SqlParameter("@MaNV", SqlDbType.Char, 10)).Value = KhenThuongKyLuat.MaNhanVien;
                 cmd.Parameters.Add(new SqlParameter("@SoQD", SqlDbType.Char, 10)).Value = KhenThuongKyLuat.SoQuyetDinh;
                 cmd.Parameters.Add(new SqlParameter("@ThoiGian", SqlDbType.Date)).Value = KhenThuongKyLuat.ThoiGian;

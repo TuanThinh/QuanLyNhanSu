@@ -48,6 +48,7 @@ namespace QuanLyNhanSu.GUI
 
         private void frmTrinhDoHocVan_Load(object sender, EventArgs e)
         {
+            lockControl();
             DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
             loadList();
@@ -58,10 +59,8 @@ namespace QuanLyNhanSu.GUI
             lsvTrinhDoHocVan.Items.Clear();
             try
             {
-                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
-                SqlCommand com = new SqlCommand("Select *from TRINHDOHOCVAN", conn);
-                conn.Open();
-                SqlDataReader dr = com.ExecuteReader();
+                DAL.Connect sql = new Connect();
+                SqlDataReader dr = sql.execCommand("Select *from TRINHDOHOCVAN");
                 while (dr.Read())
                 {
                     addList(dr);
@@ -98,27 +97,31 @@ namespace QuanLyNhanSu.GUI
             lockControl();
             txtMaTDHV.Focus();
             TrinhDoHocVan trinhdohocvan = new TrinhDoHocVan(txtMaTDHV.Text, txtTenTDHV.Text, txtChuyenNganhHoc.Text);
-            if (txtMaTDHV.Text == null || txtTenTDHV.Text == null)
+            if (kt == true)
             {
-                MessageBox.Show("Bạn chưa điền đủ thông tin!");
+                if (txtMaTDHV.Text == null || txtTenTDHV.Text == null)
+                {
+                    MessageBox.Show("Bạn chưa điền đủ thông tin!");
+                }
+                else
+                {
+                    try
+                    {
+                        addTrinhdohocvan.AddProc(trinhdohocvan);
+                        MessageBox.Show("Lưu Thông tin Thành công!");
+                    }
+                    catch (Exception a)
+                    {
+                        MessageBox.Show("Thêm thông tin không thành công!", "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
-            {
-                try
-                {
-                    addTrinhdohocvan.AddProc(trinhdohocvan);
-                    MessageBox.Show("Lưu Thông tin Thành công!");
-                }
-                catch (Exception a)
-                {
-                    MessageBox.Show("Thêm thông tin không thành công!", "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            if(kt == false)
             {
                 TrinhDoHocVan_Controller trinhDoHocVan_Controller = new TrinhDoHocVan_Controller();
                 trinhDoHocVan_Controller.EditTrinhDoHocVan(trinhdohocvan);
             }
+            loadList();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -181,6 +184,7 @@ namespace QuanLyNhanSu.GUI
             string query = "delete from TRINHDOHOCVAN where MaTDHV = '" + txtMaTDHV.Text.Trim() + "'";
             DAL.Connect conn = new DAL.Connect();
             conn.execNonQuery(query);
+            loadList();
         }
 
         private void lsvTrinhDoHocVan_MouseClick(object sender, MouseEventArgs e)

@@ -17,9 +17,7 @@ namespace QuanLyNhanSu.DATA.AddData
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("ADDPhongBan", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
+                SqlCommand cmd = new SqlCommand("insert into PHONGBAN(MaPB, TenPB, DiaChi, SDT) values (@MaPB, @TenPB, @DiaChi, @SDT)", conn);
                 cmd.Parameters.Add(new SqlParameter("@MaPB", SqlDbType.Char, 10)).Value = phongban.MaPhongBan;
                 cmd.Parameters.Add(new SqlParameter("@TenPB", SqlDbType.Text)).Value = phongban.TenPhongBan;
                 cmd.Parameters.Add(new SqlParameter("@DiaChi", SqlDbType.Text)).Value = phongban.DiaChi;

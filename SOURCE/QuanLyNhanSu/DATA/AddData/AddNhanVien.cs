@@ -18,13 +18,11 @@ namespace QuanLyNhanSu.DATA.AddData
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("ADDNHANVIEN", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
+                SqlCommand cmd = new SqlCommand("insert into NHANVIEN(MaNV, HoTen, GioiTinh, NgaySinh, DiaChi, DanToc, QuocTich, SDT, MaPB, MaCV, MaTDHV, BacLuong) values (@MaNV, @HoTen, @GioiTinh, @NgaySinh, @DiaChi, @DanToc, @QuocTich, @SDT, @MaPB, @MaCV, @MaTDHV, @BacLuong)", conn);
                 cmd.Parameters.Add(new SqlParameter("@MaNV", SqlDbType.Char, 10)).Value = nhanvien.MaNhanVien;
                 cmd.Parameters.Add(new SqlParameter("@HoTen", SqlDbType.Text)).Value = nhanvien.HoTen;
                 cmd.Parameters.Add(new SqlParameter("@GioiTinh", SqlDbType.Text)).Value = nhanvien.GioiTinh;
-                cmd.Parameters.Add(new SqlParameter("@NgaySinh", SqlDbType.Date)).Value = nhanvien.NgaySinh.ToString("yyyy-mm-dd");
+                cmd.Parameters.Add(new SqlParameter("@NgaySinh", SqlDbType.Date)).Value = nhanvien.NgaySinh/*.ToString("yyyy-mm-dd")*/;
                 cmd.Parameters.Add(new SqlParameter("@Diachi", SqlDbType.Text)).Value = nhanvien.DiaChi;
                 cmd.Parameters.Add(new SqlParameter("@DanToc", SqlDbType.Text)).Value = nhanvien.DanToc;
                 cmd.Parameters.Add(new SqlParameter("@QuocTich", SqlDbType.Text)).Value = nhanvien.QuocTich;

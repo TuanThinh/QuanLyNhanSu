@@ -18,9 +18,7 @@ namespace QuanLyNhanSu.DATA.AddData
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("ADDTRINHDOHOCVAN", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
+                SqlCommand cmd = new SqlCommand("insert into TRINHDOHOCVAN(MaTDHV, TenTDHV, ChuyenNganhHoc) values (@MaTDHV, @TenTDHV, @ChuyenNganhHoc)", conn);
                 cmd.Parameters.Add(new SqlParameter("@MaTDHV", SqlDbType.Char, 10)).Value = trinhdohocvan.MaTDHV;
                 cmd.Parameters.Add(new SqlParameter("@TenTDHV", SqlDbType.Text)).Value = trinhdohocvan.TenTDHV;
                 cmd.Parameters.Add(new SqlParameter("@ChuyenNganhHoc", SqlDbType.Text)).Value = trinhdohocvan.ChuyenNganhHoc;

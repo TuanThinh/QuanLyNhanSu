@@ -55,7 +55,7 @@ namespace QuanLyNhanSu.GUI
             loadList();
         }
 
-        private void loadList()         {             lsvChucVu.Items.Clear();             try             {                 SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NE70A7B\\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True");                 SqlCommand com = new SqlCommand("Select * from CHUCVU", conn);                 conn.Open();                 SqlDataReader dr = com.ExecuteReader();                 while (dr.Read())                 {                     addList(dr);                 }             }             catch (Exception ex)             {                  throw;             }         }
+        private void loadList()         {             lsvChucVu.Items.Clear();             try             {                 DAL.Connect sql = new Connect();                 SqlDataReader dr = sql.execCommand("select * from CHUCVU");                 while (dr.Read())                 {                     addList(dr);                 }             }             catch (Exception ex)             {                  throw;             }         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -103,6 +103,7 @@ namespace QuanLyNhanSu.GUI
                 ChucVu_Controller chucVu_Controller = new ChucVu_Controller();
                 chucVu_Controller.EditChucVu(chucVu);
             }
+            loadList();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -186,6 +187,7 @@ namespace QuanLyNhanSu.GUI
             string query = "delete from CHUCVU where MaCV = '" + txtMaCV.Text.Trim() + "'";
             DAL.Connect conn = new DAL.Connect();
             conn.execNonQuery(query);
+            loadList();
         }
 
         private void btnRf_Click(object sender, EventArgs e)

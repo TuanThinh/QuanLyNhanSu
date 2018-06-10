@@ -36,6 +36,7 @@ namespace QuanLyNhanSu.GUI
             btnLuu.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            btnThem.Enabled = true;
         }
 
         public void openControl()
@@ -52,6 +53,7 @@ namespace QuanLyNhanSu.GUI
 
         private void frmHopDongLaoDong_Load(object sender, EventArgs e)
         {
+            lockControl();
             DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
             loadList();
@@ -62,10 +64,8 @@ namespace QuanLyNhanSu.GUI
             lsvHopDongLaoDong.Items.Clear();
             try
             {
-                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
-                SqlCommand com = new SqlCommand("Select *from HOPDONGLAODONG", conn);
-                conn.Open();
-                SqlDataReader dr = com.ExecuteReader();
+                DAL.Connect sql = new Connect();
+                SqlDataReader dr = sql.execCommand("Select * from HOPDONGLAODONG");
                 while (dr.Read())
                 {
                     addList(dr);
@@ -73,8 +73,6 @@ namespace QuanLyNhanSu.GUI
             }
             catch (Exception ex)
             {
-
-                throw;
             }
         }
 
@@ -126,6 +124,7 @@ namespace QuanLyNhanSu.GUI
                 hopDongLaoDong_Controller.EditHopDongLaoDong(hopdonglaodong);
             }
             //txtMaHopDong.Focus();
+            loadList();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -147,12 +146,19 @@ namespace QuanLyNhanSu.GUI
             //openControl();
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
-            txtMaHopDong.Text = lsvHopDongLaoDong.SelectedItems[0].SubItems[0].Text;
-            txtMaNV.Text = lsvHopDongLaoDong.SelectedItems[0].SubItems[1].Text;
-            txtLoaiHopDong.Text = lsvHopDongLaoDong.SelectedItems[0].SubItems[2].Text;
-            dtNgayBatDau.Value = DateTime.ParseExact(lsvHopDongLaoDong.SelectedItems[0].SubItems[3].Text, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
-            dtNgayKetThuc.Value = DateTime.ParseExact(lsvHopDongLaoDong.SelectedItems[0].SubItems[4].Text, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+            try
+            {
+                txtMaHopDong.Text = lsvHopDongLaoDong.SelectedItems[0].SubItems[0].Text;
+                txtMaNV.Text = lsvHopDongLaoDong.SelectedItems[0].SubItems[1].Text;
+                txtLoaiHopDong.Text = lsvHopDongLaoDong.SelectedItems[0].SubItems[2].Text;
+                dtNgayBatDau.Value = DateTime.ParseExact(lsvHopDongLaoDong.SelectedItems[0].SubItems[3].Text, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+                dtNgayKetThuc.Value = DateTime.ParseExact(lsvHopDongLaoDong.SelectedItems[0].SubItems[4].Text, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
 
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -230,6 +236,7 @@ namespace QuanLyNhanSu.GUI
             string query = "delete from HOPDONGLAODONG where MaHD = '" + txtMaHopDong.Text.Trim() + "'";
             DAL.Connect conn = new DAL.Connect();
             conn.execNonQuery(query);
+            loadList();
         }
 
         private void btnRf_Click(object sender, EventArgs e)

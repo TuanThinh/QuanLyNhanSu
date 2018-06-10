@@ -48,6 +48,9 @@ namespace QuanLyNhanSu.GUI
 
         private void frmKhenThuongKyLuat_Load(object sender, EventArgs e)
         {
+            lockControl();
+            DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
+            nd.checkPermissions(btnThem, btnSua, btnXoa);
             loadList();
         }
 
@@ -57,10 +60,8 @@ namespace QuanLyNhanSu.GUI
 
             try
             {
-                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
-                SqlCommand com = new SqlCommand("Select *from KHENTHUONG_KYLUAT", conn);
-                conn.Open();
-                SqlDataReader dr = com.ExecuteReader();
+                DAL.Connect sql = new Connect();
+                SqlDataReader dr = sql.execCommand("Select *from KHENTHUONG_KYLUAT");
                 while (dr.Read())
                 {
                     addList(dr);
@@ -69,7 +70,6 @@ namespace QuanLyNhanSu.GUI
             catch (Exception ex)
             {
 
-                throw;
             }
         }
 
@@ -118,6 +118,7 @@ namespace QuanLyNhanSu.GUI
                 KhenThuongKyLuat_Controller khenThuongKyLuat_Controller = new KhenThuongKyLuat_Controller();
                 khenThuongKyLuat_Controller.EditKhenThuongKyLuat(khenThuongKyLuat);
             }
+            loadList();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -140,10 +141,17 @@ namespace QuanLyNhanSu.GUI
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
 
-            txtMaNV.Text = lsvKhenThuongKyLuat.SelectedItems[0].SubItems[0].Text;
-            txtSoQDKhenThuongKyLuat.Text = lsvKhenThuongKyLuat.SelectedItems[0].SubItems[1].Text;
-            dtThoiGian.Value = DateTime.ParseExact(lsvKhenThuongKyLuat.SelectedItems[2].SubItems[1].Text, "yyyy/MM/dd hh:mm:ss tt", CultureInfo.InvariantCulture);
+            try
+            {
+                txtMaNV.Text = lsvKhenThuongKyLuat.SelectedItems[0].SubItems[0].Text;
+                txtSoQDKhenThuongKyLuat.Text = lsvKhenThuongKyLuat.SelectedItems[0].SubItems[1].Text;
+                dtThoiGian.Value = DateTime.ParseExact(lsvKhenThuongKyLuat.SelectedItems[2].SubItems[1].Text, "yyyy/MM/dd hh:mm:ss tt", CultureInfo.InvariantCulture);
 
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -201,6 +209,7 @@ namespace QuanLyNhanSu.GUI
             string query = "delete from KHENTHUONG_KYLUAT where MaNV = '" + txtMaNV.Text.Trim() + "'and SoQD = '" + txtSoQDKhenThuongKyLuat.Text.Trim() + "'";
             DAL.Connect conn = new DAL.Connect();
             conn.execNonQuery(query);
+            loadList();
         }
 
         private void btnRf_Click(object sender, EventArgs e)

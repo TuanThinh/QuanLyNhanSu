@@ -47,6 +47,7 @@ namespace QuanLyNhanSu.GUI
 
         private void frmLuong_Load(object sender, EventArgs e)
         {
+            lockControl();
             DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
             loadList();
@@ -57,10 +58,8 @@ namespace QuanLyNhanSu.GUI
             lsvLuong.Items.Clear();
             try
             {
-                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
-                SqlCommand com = new SqlCommand("Select *from LUONG", conn);
-                conn.Open();
-                SqlDataReader dr = com.ExecuteReader();
+                DAL.Connect sql = new Connect();
+                SqlDataReader dr = sql.execCommand("Select *from LUONG");
                 while (dr.Read())
                 {
                     addList(dr);
@@ -69,7 +68,6 @@ namespace QuanLyNhanSu.GUI
             catch (Exception ex)
             {
 
-                throw;
             }
         }
 
@@ -124,6 +122,7 @@ namespace QuanLyNhanSu.GUI
                 Luong_Controller luong_Controller = new Luong_Controller();
                 luong_Controller.EditLuong(luong);
             }
+            loadList();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -196,6 +195,7 @@ namespace QuanLyNhanSu.GUI
             string query = "delete from LUONG where BacLuong = '" + txtBacLuong.Text.Trim() + "'";
             DAL.Connect conn = new DAL.Connect();
             conn.execNonQuery(query);
+            loadList();
         }
 
         private void lsvLuong_MouseClick(object sender, MouseEventArgs e)

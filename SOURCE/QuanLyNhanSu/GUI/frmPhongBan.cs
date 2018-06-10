@@ -52,6 +52,7 @@ namespace QuanLyNhanSu.GUI
 
         private void frmPhongBan_Load(object sender, EventArgs e)
         {
+            lockControl();
             DAL.NguoiDung_Controller nd = new DAL.NguoiDung_Controller();
             nd.checkPermissions(btnThem, btnSua, btnXoa);
             loadList();
@@ -62,10 +63,8 @@ namespace QuanLyNhanSu.GUI
             lsvPhongBan.Items.Clear();
             try
             {
-                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
-                SqlCommand com = new SqlCommand("Select *from PHONGBAN", conn);
-                conn.Open();
-                SqlDataReader dr = com.ExecuteReader();
+                DAL.Connect sql = new Connect();
+                SqlDataReader dr = sql.execCommand("Select * from PHONGBAN");
                 while (dr.Read())
                 {
                     addList(dr);
@@ -74,7 +73,6 @@ namespace QuanLyNhanSu.GUI
             catch (Exception ex)
             {
 
-                throw;
             }
         }
 
@@ -144,7 +142,7 @@ namespace QuanLyNhanSu.GUI
                 phongBan_Controller.EditPhongBan(phongban);
             }
 
-
+            loadList();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -235,6 +233,7 @@ namespace QuanLyNhanSu.GUI
             string query = "delete from PHONGBAN where MaPB = '" + txtMaPB.Text.Trim() + "'";
             DAL.Connect conn = new DAL.Connect();
             conn.execNonQuery(query);
+            loadList();
         }
 
         private void btnRf_Click(object sender, EventArgs e)

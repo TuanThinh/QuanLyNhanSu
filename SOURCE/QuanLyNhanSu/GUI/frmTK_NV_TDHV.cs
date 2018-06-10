@@ -17,7 +17,7 @@ namespace QuanLyNhanSu.GUI
         {
             InitializeComponent();
         }
-        public SqlConnection cn = new SqlConnection();
+        public SqlConnection cn = new SqlConnection(@"Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
         public void Ketnoi()
         {
             try

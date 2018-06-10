@@ -21,7 +21,7 @@ namespace QuanLyNhanSu.GUI
         {
 
         }
-           public SqlConnection cn = new SqlConnection();
+           public SqlConnection cn = new SqlConnection(@"Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True");
            public void Ketnoi()
            {
                try
@@ -87,12 +87,12 @@ namespace QuanLyNhanSu.GUI
 
         private void btnXong_Click_1(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedValue.ToString().Equals("Mã nhân viên"))
+            if (comboBox1.Text.Trim().Equals("Mã nhân viên"))
             {
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView1.DataSource = HienDL("select A.MaNV as N'Mã NV',A.HoTen as N'Họ và Tên',B.SoQD as N'Số Quyết Định',B.ThoiGian as N'Thời Gian',C.LyDo as N'Lý Do',C.HinhThuc as N'Hình Thức' from (NHANVIEN  A inner join KHENTHUONG_KYLUAT B on A.MaNV = B.MaNV) inner join SOQUYETDINHKHENTHUONG_KYLUAT C on B.SoQD = C.SoQD and A.MaNV Like '%" + txtKeyValue.Text + "%'");
             }
-            if (comboBox1.SelectedValue.ToString().Equals("Hình Thức"))
+            if (comboBox1.Text.Trim().Equals("Hình Thức"))
             {
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView1.DataSource = HienDL("select A.MaNV as N'Mã NV',A.HoTenas N'Họ và Tên',B.SoQD as N'Số Quyết Định',B.ThoiGian as N'Thời Gian',C.LyDo as N'Lý Do',C.HinhThuc as N'Hình Thức' from (NHANVIEN  A inner join KHENTHUONG_KYLUAT B on A.MaNV = B.MaNV) inner join SOQUYETDINHKHENTHUONG_KYLUAT C on B.SoQD = C.SoQD and C.HinhThuc Like '%" + txtKeyValue.Text + "%'");
